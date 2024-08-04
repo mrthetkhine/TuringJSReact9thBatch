@@ -1,0 +1,35 @@
+<html>
+    <script>
+        
+       console.log("hello world");
+       console.log('hello world');
+
+       let str = "Hi \"How are you\"";
+       console.log('Str ',str);
+
+       str = 'Hi "How are you" ';
+       console.log('Str ',str);
+
+       str = "First line\n"
+            +"second line"
+       console.log('Str ',str);
+
+       str = `Firstline 
+            Second line`
+       console.log('Str ',str);
+
+       let price =10;
+       let quantity=20;
+
+       str = "price = "+price
+            +" quantity = "+quantity
+            +" total = "+(price*quantity);
+        console.log(str);
+
+        str = `price = ${price} quanity = ${quantity} total = ${price*quantity}`;
+        console.log(str);
+
+        console.log('typeof str ',typeof str);
+        console.log('str.length ',str.length);
+    </script>
+</html>

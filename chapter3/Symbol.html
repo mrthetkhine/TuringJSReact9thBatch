@@ -1,0 +1,12 @@
+<html>
+    <script>
+        let str = "hello";
+        let symbol = Symbol(str);
+        console.log('Symbol ',symbol);
+        console.log('typeof symbol ',typeof symbol);
+
+        let obj ={};
+        obj[symbol] = "Something";
+        console.log('obj[symbol ] ',obj[symbol]);
+    </script>
+</html>
