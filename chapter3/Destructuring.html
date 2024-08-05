@@ -1,0 +1,31 @@
+<html>
+   
+    <script>
+    
+        let arr = [10,20,30];
+        console.log('Arr[0] ',arr[0]);
+        console.log('Arr[1] ',arr[1]);
+
+        /*
+        let a = arr[0];
+        let b = arr[1];*/
+        let [a,,b] = arr;
+        console.log('a ',a, ' b ',b); 
+
+        let [head,...tail] = [1,2,3,4,5];
+        console.log('head ',head);
+        console.log('tails ',tail)
+
+        let obj = {
+            name: "TK",
+            age : 39
+        }
+        /*
+        let name = obj.name;
+        let age = obj.age;
+        */
+       let {name:myName,age}= obj;
+       //myName = obj.name
+       console.log('Name ',myName, ' Age ',age);
+    </script>
+</html>

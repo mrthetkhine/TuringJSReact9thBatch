@@ -1,0 +1,46 @@
+<html>
+    <script>
+        
+       let obj = {
+            name: 'TK',
+            age : 39,
+            toString()
+            {
+                console.log('ToString called');
+                return 100;
+            }
+       };
+       console.log('Obj.name ',obj.name);
+       console.log('Obj.age ',obj.age);
+       console.log('Obj.toString() ',obj.toString());
+       console.log('Obj.valueOf() ',obj.valueOf());
+
+       console.log('""+obj ',''+obj);//object->string, obj.toString()
+       /*
+        object toString
+        number 100-> string->'100'
+       */
+        console.log('+obj ',+obj);
+        console.log('!!obj ',!!obj);
+        /*
+            obj->toString
+            100-> !!100-> true
+        */
+       console.log('======');
+        let obj2 = {
+        
+            toString()
+            {
+                console.log('ToString called');
+                return {};
+            },
+            valueOf()
+            {
+                console.log('ValueOf called');
+                return 20;
+            }
+       };
+       console.log('!!obj2==> ',!!obj2);
+        
+    </script>
+</html>

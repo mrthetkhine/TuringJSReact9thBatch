@@ -1,0 +1,54 @@
+<html>
+    <script>
+        
+       
+        let obj2 = {
+            
+            toString()
+            {
+                console.log('ToString called');
+                return {};
+            },
+            valueOf()
+            {
+                console.log('ValueOf called');
+                return '20';
+            }
+           
+       };
+       console.log('+obj2==> ',+obj2);
+       /*
+        valueOf->
+       */
+       let obj3 = {
+            
+            toString()
+            {
+                console.log('ToString called');
+                return 102;
+            },
+            valueOf()
+            {
+                console.log('ValueOf called');
+                return {};
+            }
+           
+       };
+       console.log('+obj3==> ',+obj3);
+       /*
+        valueOf-> not primitive
+            toString-> string
+                string->number
+       */
+        let arr = [10,20];
+        console.log('arr ',arr.toString());
+        console.log('+arr ',+arr);
+        /*
+            arr ->toString
+                '10,20'->number
+                NaN
+        */
+        console.log('+[10] ',+[10]);
+        console.log('+[] ',+[]);
+    </script>
+</html>
