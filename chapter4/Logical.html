@@ -1,0 +1,45 @@
+<html>
+   
+    <script>
+    
+      console.log('true && false ', true && false);
+
+      console.log(' "Hello" && false ', "hello" && false);
+      console.log(' "Hello" || false ', "hello" || false);
+
+      console.log();
+      /*
+      &&
+
+        0 0 -> 0
+        0 1 -> 0
+
+            if( LHS falsy )->return LHS
+        1 0 -> 0
+        1 1 -> 1
+            if(LHS is truthy)return RHS
+      */
+
+      //if( LHS falsy )->return LHS
+      console.log(' "" && false => ', "" && false);
+      console.log(' 0 && false => ', 0 && false);
+
+      //if(LHS is truthy)return RHS
+      console.log( ' 1 && "hello" ', 1 && 'Hello');
+      console.log( ' {} && {} ', {} && {});
+        /*
+      window.MyModule = {
+        api()
+        {
+            console.log('OldAPI');
+        }
+      }*/
+      window.MyModule = window.MyModule || {
+        api()
+        {
+            console.log('API');
+        }
+      }
+      MyModule.api();
+    </script>
+</html>

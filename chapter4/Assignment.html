@@ -1,0 +1,35 @@
+<html>
+   
+    <script>
+    
+        let a = 10;
+        let b = 20;
+
+        a = b; //value semantics
+        console.log('A ',a, " B ",b);
+        a++;
+
+        console.log('A ',a, " B ",b);
+
+        let obj = {
+            data : 100,
+            another:{}
+            
+        };
+        let obj2 = obj;//reference semantics
+        obj.data ++;
+        console.log('Obj ',obj);
+        console.log('Obj2 ',obj2);
+
+        obj2 = {
+            data : 200
+        };
+        obj.data++;
+        console.log('Obj ',obj);
+        console.log('Obj2 ',obj2);
+
+        obj = obj.data;//value->copy semantic
+        //obj= 102
+        console.log('Obj ',obj);
+    </script>
+</html>
