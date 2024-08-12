@@ -1,0 +1,29 @@
+<html>
+   
+    <script>
+    
+        let a = 10 ;
+        let data;
+        data = (a != undefined && a !=null)?a:100;
+        console.log('Data ',data);
+
+        let setting  ;
+        setting = setting ?? 200;
+        console.log('Setting ',setting)
+
+        function plugin(params)
+        {
+            let config = {
+                color : 'red',
+                width : 100
+            }
+            params.color = params.color?? config.color;
+            params.width = params.width?? config.width;
+            console.log('Params ',params);
+        }
+        plugin({
+            color: 'green',
+            width:3
+        })
+    </script>
+</html>

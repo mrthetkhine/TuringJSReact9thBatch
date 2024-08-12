@@ -1,0 +1,23 @@
+<html>
+   
+    <script>
+    
+        function plus(a,b)
+        {
+            //string or number
+            if( typeof a === 'string' || typeof b =='string')
+            {
+                return (''+a).concat(b);
+            }
+            else
+            {
+                a = +a;
+                b = +b;
+                return a+b;
+            }
+        }
+        console.log(plus('hello',123)); 
+        console.log(plus(123,'hello')); 
+        console.log(plus(123,true)); 
+    </script>
+</html>
