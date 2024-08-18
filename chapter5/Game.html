@@ -1,0 +1,27 @@
+<html>
+   
+    <script>
+        
+        //0->1
+       
+       let num = parseInt( Math.random() * 10 + 1);
+       //console.log('Math.random ',num); 
+        
+
+       let input;
+        do
+        {
+            input = prompt('Enter number');
+            if( input > num)
+            {
+                console.log('Too large');
+            }
+            else if(input < num)
+            {
+                console.log('Too small');
+            }
+        }while( num != input);
+        //console.log('Input ',input);
+        console.log('Congratulation your guess is correct');
+    </script>
+</html>
