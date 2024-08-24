@@ -7,6 +7,22 @@
         {
             console.log('ch ',ch);
         }
-        
+        for(let i=0;i < str.length;i++)
+        {
+            console.log(str[i]);
+        }
+        let data = [1,1,2,2,2,3]
+        let wordSet = new Set(data);
+        console.log('WordSet ',wordSet);
+        let unique = [];
+        for(let word of wordSet) {
+            console.log('Word ',word);
+        }
+
+        let m = new Map([[1, "one"]]);
+        for(const item of m)
+        {
+            console.log('Item ',item);
+        }
     </script>
 </html>

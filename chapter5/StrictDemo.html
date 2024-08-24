@@ -1,0 +1,35 @@
+<html>
+   
+    <script>
+        //'use strict';
+        //eval = 'Hello';
+        //undefined = "some value";
+        /*
+        function someFun(a,a)
+        {
+
+        }*/
+        let obj = {
+            'age' : 'TK',
+            'age': 'Something'
+        }
+        console.log(obj.something == undefined);
+        console.log('Undefined ',undefined);
+        //top = 100;
+        //delete something;
+        console.log('Top ',top);
+        let a = 10;
+        console.log('A ',a);
+        /*
+        with(window)
+        {
+
+        }*/
+       function hello()
+       {
+        console.log('Caller ',arguments.callee);
+        console.log('Hello ',this);
+       }
+       hello();
+    </script>
+</html>

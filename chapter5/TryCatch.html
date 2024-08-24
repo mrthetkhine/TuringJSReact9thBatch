@@ -1,0 +1,38 @@
+<html>
+   
+    <script>
+        //debugger;
+        function div(a,b)
+        {
+            if( isNaN(a) || isNaN(b))
+            {
+                throw new Error('A or B is NaN');
+            }
+            return a /b;
+        }
+        function another()
+        {
+            try
+            {
+                let result = div(10,NaN);//10/NaN
+                console.log('Div result ',result);   
+                return result;
+            }
+            catch(err)
+            {
+                console.log('Erorr happened ',err);
+                return 100;
+                //throw new Error('Rethrow');
+            }
+            finally
+            {
+                console.log('Finally always run');
+                return 10;
+            }
+        }
+        let data = another();
+        console.log('Data ',data);
+        console.log('End of code');
+        
+    </script>
+</html>
