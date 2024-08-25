@@ -1,0 +1,20 @@
+<html>
+   
+    <script>
+        
+        let user = {
+            name : 'Someone',
+            address: 'Another',
+            personalInfo : 'Not to be shown',
+            toJSON(){
+                console.log('ToJSON called');
+                return {
+                    username: this.name,
+                    address: this.address
+                }
+            }
+        }
+        let str = JSON.stringify(user);
+        console.log('Str ',str);
+    </script>    
+</html>

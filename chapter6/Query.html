@@ -1,0 +1,22 @@
+<html>
+   
+    <script>
+        
+        let book = {
+            title: 'JavaScript definitive guid',
+            author1:"David flagan",
+            author2:"Another",
+            year : 2014,
+        };
+        console.log('Book.title ',book.title);
+
+        let propName = 'author';
+        console.log('Book[propName ] ',book[propName+1]);
+        console.log('Book[propName ] ',book[propName+2]);
+
+        for(let prop in book)
+        {
+            console.log('Prop ',prop, ' Value ',book[prop]);
+        }
+    </script>    
+</html>

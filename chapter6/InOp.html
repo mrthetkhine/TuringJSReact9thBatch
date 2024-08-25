@@ -1,0 +1,24 @@
+<html>
+   
+    <script>
+        
+        let obj = {
+            x : 100,
+            items: [100],
+            y : undefined
+        };
+        console.log('x in obj ','x' in obj);
+        console.log('y in obj ','y' in obj);
+        console.log('toString in obj ','toString' in obj);
+        console.log(' y!==undefined ',obj.y !== undefined);
+        console.log('hasOwnProperty x ',obj.hasOwnProperty('x'));
+        console.log('hasOwnProperty toString ',obj.hasOwnProperty('toString'));
+
+        console.log('enumerable x ',obj.propertyIsEnumerable('x'));
+        console.log('enumerable toString ',obj.propertyIsEnumerable('toString'));
+
+        console.log('Keys ',Object.keys(obj));
+        console.log('Values ',Object.values(obj));
+        console.log('Entries ',Object.entries(obj));
+    </script>    
+</html>

@@ -1,0 +1,22 @@
+<html>
+   
+    <script>
+        
+        let date = new Date();
+        console.log('Date ',date);
+
+        let obj = {
+            name : "TK",
+            age : 39
+        };
+        console.log('Obj ',obj);
+        console.log('Date.prototype ',Date.prototype);
+        
+        let parent = {
+            x: 100
+        };
+        let obj2 = Object.create(parent);
+        console.log('Obj2 ',obj2);
+        console.log('Obj2.x ',obj2.x);
+    </script>
+</html>

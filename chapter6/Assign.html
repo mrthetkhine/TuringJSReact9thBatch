@@ -1,0 +1,35 @@
+<html>
+   
+    <script>
+        
+        let parent = {
+            x : 300,
+            z : 100,
+        }
+        let obj = {
+            x : 100,
+            y : 200,
+        };
+        let child = Object.assign(obj,parent);
+        console.log('Child ',child);
+        console.log('Obj ',obj);
+        console.log('Parent ',parent);
+
+        
+        //plugin
+        //default, parameters
+
+        function plugin(paramers)
+        {
+            let defaultConfig = {
+                color : 'red',
+                max : 200,
+                width :100,
+            }
+            return Object.assign(defaultConfig,paramers);
+        }
+        console.log(plugin({
+            color :'blue'
+        }));
+    </script>    
+</html>

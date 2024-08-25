@@ -1,0 +1,24 @@
+<html>
+   
+    <script>
+        
+        let parent = {
+           
+            items: [100]
+        };
+        let obj1 = Object.create(parent);
+        let obj2 = Object.create(parent);
+
+        obj1.x= 10;
+        obj1.items.push(200);
+        
+        console.log('Obj1.item ',obj1.items);
+        console.log('Obj2.item ',obj2.items);
+
+        console.log('Ob1.something ',obj1?.something?.another);
+
+        console.log('obj1.x ',obj1.x);
+        delete obj1.x;
+        console.log('obj1.x ',obj1.x);
+    </script>    
+</html>

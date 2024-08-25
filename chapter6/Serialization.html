@@ -1,0 +1,17 @@
+<html>
+   
+    <script>
+        
+        let obj = {
+            x : 300,
+            z : 100,
+            items: [100,200]
+        }
+       let str = JSON.stringify(obj);
+       console.log('Str ',str);
+       let obj2 = JSON.parse(str);
+       console.log(obj == obj2);
+       console.log('Obj2 ',obj2); 
+        
+    </script>    
+</html>

@@ -1,0 +1,25 @@
+<html>
+   
+    <script>
+        
+        let user = {
+            _age : 29,
+            get age()
+            {
+                return this._age;
+            },
+            set age(newValue)
+            {
+                console.log('New value ',newValue);
+                if(newValue>=0 && newValue <=100)
+                {
+                    this._age = newValue;
+                }
+            }
+
+        };
+        user.age = 203;
+
+        console.log('User ',user.age);
+    </script>    
+</html>

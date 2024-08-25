@@ -1,0 +1,29 @@
+<html>
+   
+    <script>
+        
+        let obj = {
+            x : 300,
+            z : 100,
+            items: [100,200]
+        }
+        //shallow clone
+        let obj2 = { ... obj};
+        //obj2.x = obj.x;
+        //obj2.y = obj.y;
+        //obj2.items =obj.items;
+        obj.x ++;
+        console.log('Obj.x ',obj.x);
+        console.log('Obj2.x ',obj2.x);
+
+        obj.items = [];
+        obj.items.push(300);
+        console.log('Obj.items ',obj.items);
+        console.log('Obj2.items ',obj2.items);
+
+        let obj3 = JSON.parse( JSON.stringify(obj2));
+        obj2.items.push(400);
+
+        console.log('Obj3 ',obj3.items);
+    </script>    
+</html>

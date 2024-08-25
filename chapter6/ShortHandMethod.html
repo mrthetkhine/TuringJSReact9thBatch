@@ -1,0 +1,17 @@
+<html>
+   
+    <script>
+        
+         let circle = {
+            x : 300,
+            z : 100,
+            radius: 5,
+            get area()
+            {
+                console.log('getter aera');
+                return Math.PI * this.radius * this.radius;
+            }
+        }
+        console.log('Area ',circle.area);
+    </script>    
+</html>

@@ -1,0 +1,21 @@
+<html>
+   
+    <script>
+        
+        let grandParent = {
+            x : 10,
+        };
+        let parent = Object.create(grandParent);
+
+        parent.y = 20;
+        let obj = Object.create(parent);
+        console.log('Obj ',obj);
+        console.log('Obj. x ',obj.x);
+        console.log('Obj.y ',obj.y);
+        console.log('Obj.data ',obj.data);
+
+        obj.x = 100;
+        console.log('Grandparent.x ',grandParent.x);
+        console.log('Obj.x ',obj.x);
+    </script>    
+</html>

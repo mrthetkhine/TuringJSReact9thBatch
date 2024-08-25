@@ -1,0 +1,29 @@
+<html>
+   
+    <script>
+        
+        let grandParent = {
+            x : 10,
+            items: [100]
+        };
+        let parent = Object.create(grandParent);
+
+        parent.y = 20;
+        let obj = Object.create(parent);
+        console.log('Obj ',obj);
+        console.log('Obj. x ',obj.x);
+        console.log('Obj.y ',obj.y);
+        console.log('Obj.data ',obj.data);
+
+        obj.x = 100;
+        obj.items.push(200);
+        console.log('Grandparent.items ',grandParent.items);
+        console.log('Obj.items ',obj.items);
+
+        obj.items =[300,400]; 
+        console.log('Grandparent.items ',grandParent.items);
+        console.log('Obj.items ',obj.items);
+
+        console.log('obj.toString ',obj.toString());
+    </script>    
+</html>
