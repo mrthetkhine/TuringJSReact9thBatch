@@ -1,0 +1,35 @@
+<html>
+   
+    <script>
+        let items = [ 
+            {
+                item : 'Item 1',
+                price : 10,
+                quantity :4,
+            },
+            {
+                item : 'Item 2',
+                price : 50,
+                quantity :2,
+            },
+        ];
+        console.log('Items ',items);
+        let total = 0;
+        for(let i=0;i< items.length;i++)
+        {
+            total += items[i].price* items[i].quantity;
+            console.log('Items ',i , ' ',items[i]);
+        }
+        console.log('Total ',total);
+
+        total = 0;
+        for(const item of items)//item = items[i]
+        {
+            console.log('item ',item);
+        }
+        for(const [index,value] of items.entries())
+        {
+            console.log('Index ',index, ' Value ',value);
+        }
+    </script>    
+</html>
