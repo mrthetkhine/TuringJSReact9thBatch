@@ -1,0 +1,30 @@
+<html>
+   
+    <script>
+        let arr = [1,2,3,4,5,6];
+        
+        let oddIndex = [];
+        for(let i=0;i< arr.length;i++)
+        {
+            if( arr[i] %2 == 1)
+            {
+                oddIndex.push(i);
+            }
+        }
+        oddIndex.reverse();
+        console.log('Odd Index ',oddIndex);
+        //arr = arr.filter(item=> item %2==0);
+        console.log('Arr ',arr);
+
+        /*
+            oddIndex =[0,2,4]
+            arr.splice(0,1); [2,3,4,5,6]
+            [2,3,4,5,6].splice(2,)
+        */
+        for(const index of oddIndex)
+        {
+            arr.splice(index,1);
+        }
+        console.log('Arr ',arr);
+    </script>    
+</html>

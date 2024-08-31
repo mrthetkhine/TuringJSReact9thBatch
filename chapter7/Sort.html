@@ -1,0 +1,66 @@
+<html>
+   
+    <script>
+        let arr = [3,2,1,100,200,112];
+        
+        arr.sort();
+        console.log('Arr ',arr);
+
+        arr.sort((a,b)=>a-b); //comparator (a,b)=>
+        /*
+            == 0
+            > >0
+            < <0
+        */
+        console.log('Arr ',arr);
+        arr.sort((a,b)=>b-a); 
+        console.log('Arr ',arr);
+        let students = [
+            {
+                name: 'Aung Aung',
+                age : 20,
+                gender: 'Male'
+            },
+            {
+                name: 'Tin Tin',
+                age : 19,
+                gender: 'Female'
+            },
+            {
+                name: 'Mya Mya',
+                age : 30,
+                gender: 'Female'
+            },
+            {
+                name: 'Aye Mya',
+                age : 19,
+                gender: 'Female'
+            },
+            {
+                name: 'Win Aung',
+                age : 24,
+                gender: 'Male'
+            },
+            {
+                name: 'Hla Hla',
+                age : 28,
+                gender: 'Female'
+            },
+        ];
+        students.sort((studentA,studentB)=>studentA.age-studentB.age);
+        console.log('Student ',students);
+
+        
+        students.sort((a,b)=>{
+            if(a.age == b.age)
+            {
+                return a.name.localeCompare(b.name);
+            }
+            else
+            {
+                return a.age-b.age;
+            }
+        });
+        console.log('Student ',students);
+    </script>    
+</html>

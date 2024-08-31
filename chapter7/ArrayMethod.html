@@ -1,0 +1,17 @@
+<html>
+   
+    <script>
+        let arr = [1,2,3,4,5,6];
+        let slice1 = arr.slice(2,4);//index 2->3,
+        console.log('Arr ',arr);
+        console.log('Slice1 ',slice1);
+        console.log('slcie arr(1) ',arr.slice(1));
+        console.log('slcie arr(1,length) ',arr.slice(1,arr.length));
+
+        arr.splice(3,1);
+        console.log('Arr ',arr);
+
+        arr.splice(2,2,100,200);
+        console.log('Arr ',arr);
+    </script>    
+</html>

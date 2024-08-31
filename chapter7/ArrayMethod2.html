@@ -1,0 +1,18 @@
+<html>
+   
+    <script>
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+        
+        //don't use
+        // delete arr[2];
+        console.log('arr ',arr);
+
+        let arr2 = new Array(10);
+        console.log('Arr2 ',arr2);
+        arr2.fill(10,3,-2);
+        console.log('Arr2 ',arr2);
+
+        arr.copyWithin(2,4,-3);
+        console.log('Arr ',arr);
+    </script>    
+</html>

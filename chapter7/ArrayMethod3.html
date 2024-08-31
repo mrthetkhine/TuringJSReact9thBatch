@@ -1,0 +1,35 @@
+<html>
+   
+    <script>
+        let arr = [1,2,3,'10',4,5,6,7,8,9,10,NaN];
+        
+        let index = arr.indexOf(7);
+        console.log('Index ',index);
+
+        index = arr.indexOf(70);
+        console.log('Index ',index);
+
+        index = arr.indexOf(10);
+        console.log('Index ',index);
+
+        index = arr.lastIndexOf(10);
+        console.log('Index ',index);
+
+        index = arr.indexOf(10,4);
+        console.log('Index ',index);
+
+    
+        index = arr.indexOf(10);
+        while(index != -1)
+        {
+            console.log('Index of 10 ',index);
+            index = arr.indexOf(10,index+1);
+        }
+
+        console.log('includes 10 ',arr.includes(10));
+        console.log('includes 2 ',arr.includes('2'));
+
+        console.log('indexOf NaN  ',arr.indexOf(NaN));
+        console.log('includes NaN  ',arr.includes(NaN));
+    </script>    
+</html>
