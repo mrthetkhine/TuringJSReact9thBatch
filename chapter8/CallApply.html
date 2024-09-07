@@ -1,0 +1,28 @@
+<html>
+   
+    <script>
+
+        let obj = {
+            name : "TK",
+            display(msg)
+            {
+                console.log('Display ',msg, ' Name ',this.name);
+               
+            },
+           
+        }
+        obj.display('Hello');
+        let method = obj.display;
+        let obj2 = {
+            name: "Someone"
+        }
+        method.call(obj2,'Hi');
+        method.apply(obj2,['Hi']);
+
+        let arr = [1,20,-2,4,100];
+        console.log('Math.min ',Math.min.apply(null,arr));
+
+        let method2 = obj.display.bind(obj2);
+        method2('Hello');
+    </script>    
+</html>

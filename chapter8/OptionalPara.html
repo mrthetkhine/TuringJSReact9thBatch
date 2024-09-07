@@ -1,0 +1,22 @@
+<html>
+   
+    <script>
+
+        function greet(msg='How are you')//Parameter
+        {
+            console.log('Hello ',msg);
+        }
+        greet('Good afternoon');//Argument
+        greet();
+
+        
+        function max(...elements)
+        {
+            console.log('Elements ',elements);
+            return Math.max(...elements);
+        }
+        console.log(max(1,2,3));
+        console.log(max(1,2,10));
+        console.log(max(10));
+    </script>    
+</html>

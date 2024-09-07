@@ -1,0 +1,51 @@
+<html>
+   
+    <script>
+        function getUniqueId()//outer
+        {
+            let id = 0;
+            return function inner()//inner
+            {
+                return id ++;
+            }
+        }
+        let idOne = getUniqueId();
+        console.log('idOne ',idOne());
+        console.log('idOne ',idOne());
+
+        let stack = {
+            items: [],
+            push()
+            {
+
+            },
+            pop()
+            {
+
+            }
+        }
+        stack.items = [100,200];
+        function Stack()
+        {
+            let items = [];
+            function push(item)
+            {
+                items.push(item);
+            }
+            function pop()
+            {
+                return items.pop();
+            }
+            return {
+                push,
+                pop,
+            }
+        }
+        let stack1 = Stack();
+        stack1.push(100);
+        stack1.push(200);
+        console.log('stack1 ',stack1);
+        stack1.items = [];
+        console.log('stack1.pop ',stack1.pop());
+    </script>    
+</html>

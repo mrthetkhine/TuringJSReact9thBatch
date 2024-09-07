@@ -1,0 +1,22 @@
+<html>
+   
+    <script>
+
+        let obj = {
+            method1()
+            {
+                console.log('Method 1');
+                return this;
+            },
+            method2()
+            {
+                console.log('Method 2');
+                return this;
+            }
+        }
+        obj.method1().method2();
+    
+        let date = new Date();
+        console.log('Date ',date);
+    </script>    
+</html>

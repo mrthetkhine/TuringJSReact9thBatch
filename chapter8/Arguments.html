@@ -1,0 +1,29 @@
+<html>
+   
+    <script>
+
+        function greet()//Parameter
+        {
+            console.log('Arguments ',arguments);
+            
+        }
+        greet(1,2,3,'Hello');
+
+        function display(msg)
+        {
+            console.log('Display ',display.length, ' arguments ',arguments.length);
+            console.log('display ',msg);
+        }
+        display();
+        let arr = [10,8,-4,100];
+        console.log('Min ',Math.min(...arr));
+
+        let arr2 = [10,2];
+        function add(x,y)
+        {
+            console.log('x ',x , 'y ' , y);
+            return x+y;
+        }
+        console.log('Add ',add(...arr2));
+    </script>    
+</html>

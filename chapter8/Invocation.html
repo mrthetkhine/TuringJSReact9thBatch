@@ -1,0 +1,26 @@
+<html>
+   
+    <script>
+
+        function add(x,y)
+        {
+            return x+y;
+        }
+        let a = add(10,2);//x=10, y = 2
+        let b = add(3,4);
+        console.log('A ',a, ' b ',b);
+
+        let fun;
+        //fun = add;
+        console.log(fun?.(20,1));
+
+        let obj = {
+            name: "TK",
+            display()
+            {
+                console.log('My name is ',this.name);
+            }
+        }
+        obj.display();
+    </script>    
+</html>

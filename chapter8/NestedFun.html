@@ -1,0 +1,18 @@
+<html>
+   
+    <script>
+
+        function outer()
+        {
+            console.log('Outer');
+            function inner()
+            {
+                console.log('inner');
+            }
+            
+            inner();
+        }
+        outer();
+        //inner();
+    </script>    
+</html>
