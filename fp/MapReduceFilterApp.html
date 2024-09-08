@@ -1,0 +1,51 @@
+<html>
+   
+    <script>
+       
+        let students = [
+            {
+                name : "Aung Aung",
+                gender : 'Male',
+                age : 19,
+            },
+            {
+                name : "Aung Aung",
+                gender : 'Male',
+                age : 26,
+            },
+            {
+                name : "Mya Mya",
+                gender : 'Female',
+                age : 26,
+            },
+            {
+                name : "Tin Aung",
+                gender : 'Male',
+                age : 21,
+            },
+            {
+                name : "Win Win",
+                gender : 'Female',
+                age : 18,
+            },
+            {
+                name : "Hla Hla",
+                gender : 'Female',
+                age : 30,
+            },
+            {
+                name : "Kyaw Aung",
+                gender : 'Male',
+                age : 40,
+            },
+        ];
+        console.log('students ',students);
+        const isFemale = (student)=>student.gender == 'Female';
+        let result = students.filter(isFemale)
+                             .reduce( (studentA,studentB)=>{
+                                return studentA.age < studentB.age ? studentA: studentB;
+                             })
+                                ;
+        console.log('Result ',result.name);
+    </script>    
+</html>

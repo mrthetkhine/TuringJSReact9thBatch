@@ -1,0 +1,20 @@
+<html>
+   
+    <script>
+       
+        let arr = [1,2,3,4,5,6];
+        
+        let result = [];
+        for(const item of arr)
+        {
+            if(item %2 ==0)
+            {
+                result.push(item);
+            }
+        }
+        console.log('Result ',result);
+
+        result = arr.filter(x=>x %2==0);
+        console.log('Result ',result);
+    </script>    
+</html>

@@ -1,0 +1,25 @@
+<html>
+   
+    <script>
+       
+        let arr = ['1','2','3','4','5'];
+        
+        console.log('ParseInt 100,2 ',parseInt('100',2));
+        console.log('ParseInt 100,16 ',parseInt('100',16));
+        let result = arr.map(parseInt);//parseInt 2
+        console.log('result ',result);// map 3, value, index, array
+        /*
+         parseInt(1, 0)
+         parseInt('2',1)
+        */
+        function unary(fn)
+        {
+            return function(...args)
+            {
+                return fn(args[0]);
+            }
+        }
+        result = arr.map(unary(parseInt));//parseInt 2
+        console.log('result ',result);
+    </script>    
+</html>

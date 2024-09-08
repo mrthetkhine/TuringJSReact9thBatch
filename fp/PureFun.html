@@ -1,0 +1,39 @@
+<html>
+   
+    <script>
+       
+        let i = 0;
+
+        //impure function
+        function getCounter()
+        {
+            return i++;
+        }
+        //impure
+        function process(order)
+        {
+            order.something = "something";
+        }
+        //pure function
+        function add(x,y)
+        {
+            return x+y;
+        }
+        function getData()
+        {
+            return Math.random()*10;
+        }
+        function getDate()
+        {
+            return new Date().getTime();
+        }
+        console.log('getDate ',getDate());
+        console.log('getDate ',getDate());
+
+        function log(logger,message)
+        {
+            logger('Message ',message);
+        }
+        log(console.log,'Hello');
+    </script>    
+</html>

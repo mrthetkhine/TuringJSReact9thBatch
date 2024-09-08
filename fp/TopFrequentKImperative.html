@@ -1,0 +1,30 @@
+<html>
+   
+    <script>
+       
+        let arr= [1,1,2,2,3,4,1,2,3,5,2,5,3,3,2], k = 2;// 
+
+        let group = {};
+
+        for(const item of arr)
+        {
+            if(group[item])
+            {
+                group[item]++;
+            }
+            else
+            {
+                group[item] = 1;
+            }
+        }
+        console.log('Group ',group);
+        let frequencies = Object.entries(group);
+        console.log('frequencies ',frequencies);
+
+        frequencies.sort((a,b)=> b[1]-a[1]);
+        console.log('frequencies ',frequencies);
+        frequencies.length = k;
+        let topK = frequencies.map(arr=>arr[0]);
+        console.log('Top K ',topK);
+    </script>    
+</html>

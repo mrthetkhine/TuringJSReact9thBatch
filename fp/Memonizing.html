@@ -1,0 +1,38 @@
+<html>
+   
+    <script>
+       
+        function factorial(n)
+        {
+            console.log('Compute Factorial ',n);
+            let result = 1;
+            for(let i=1;i<=n;i++)
+            {
+                result *=i;
+            }
+            return result;
+        }
+        /*
+        cache[4] = 24
+        */
+        function memonize(fn)
+        {
+            let cache = {};
+            return function(n)
+            {
+                if(cache[n])
+                {
+                    return cache[n];
+                }
+                else
+                {
+                    cache[n] = fn(n);
+                    return cache[n];
+                }
+            }
+        }
+        const memonizeFactorial= memonize(factorial);
+        console.log('Fact 4 ',memonizeFactorial(4));
+        console.log('Fact 4 ',memonizeFactorial(4));
+    </script>    
+</html>

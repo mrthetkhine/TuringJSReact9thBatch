@@ -1,0 +1,26 @@
+<html>
+   
+    <script>
+       
+        let arr= [2,3,4,5];// 
+
+        function map(arr,fn)
+        {
+            return arr.reduce((array,item)=>{
+                return [...array, fn(item)];
+            },[]);
+        }
+        let result = map(arr,(x)=>x*2);
+        console.log('Result ',result);
+        
+        const isEven = (x)=> x %2 ==0;
+        function filter(arr,predicateFn)
+        {
+            return arr.reduce((array,item)=>{
+                return predicateFn(item)?[...array,item]: array;
+            },[]);
+        }
+        console.log('evenlist ,',filter(arr,isEven));
+        
+    </script>    
+</html>

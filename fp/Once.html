@@ -2,34 +2,34 @@
    
     <script>
        
-        function payment()
+        function payment(card)
         {
-            console.log('Payment');
+            console.log('Payment ',card);
             
         }
-        function processOrder()
+        function processOrder(orderId)
         {
-            console.log(' processOrder');
+            console.log(' processOrder ',orderId);
         }
         function once(fn)//higher order
         {
             let done = false;
-            return function()
+            return function(...args)
             {
                 //return !done? (done=true, fn()):undefined;
                 if(!done)
                 {
                     done = true;
-                    return fn();
+                    return fn(...args);
                 }
             }
         }
         payment = once(payment);
         processOrder = once(processOrder);
 
-        payment();
-        payment();
-        processOrder();
-        processOrder();
+        payment('card1');
+        payment('card1');
+        processOrder('order1');
+        processOrder('order1');
     </script>    
 </html>
