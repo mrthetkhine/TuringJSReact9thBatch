@@ -7,5 +7,22 @@
 
         const fact = (n) => R.reduce(R.multiply,1, R.range(1,n+1));
         console.log('Fact 4 ',fact(4));
+
+        function add(x,y)
+        {
+            return x+y;
+        }
+        let curriedAdd = R.curry(add);
+        console.log('CurriedAdd ',curriedAdd(1)(2));
+
+
+        const inc = (x)=> x+1;
+        const double= (x) => x * 2;
+        const divBy2 = (x) => x/2;
+
+        const newFun = R.pipe(inc,double,divBy2);
+        console.log('New Fun ',newFun(3));
+
+        console.log('Identity ',R.identity(3));
     </script>    
 </html>

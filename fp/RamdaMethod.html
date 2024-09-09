@@ -1,0 +1,15 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+       
+       const equals3 = R.equals(3);
+       let arr = [3,3,3];
+       console.log('all equals 3 ', R.all(equals3,arr));
+
+       arr = [1,2,3,4,5,6];
+       const even = x => x % 2 == 0;
+       console.log('Eeven count ',R.count(even)(arr));
+
+       console.log('Prop 0 ', R.prop(0)(arr));
+    </script>    
+</html>

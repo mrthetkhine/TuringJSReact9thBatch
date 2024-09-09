@@ -1,0 +1,35 @@
+<html>
+    
+    <script>
+       
+        function appendHi(str) {
+            return str+' hi';
+        }
+        function toUpper(str)
+        {
+            return str.toUpperCase();
+        }
+        function appendHiAndToUpper(str)
+        {
+            return toUpper( appendHi(str));
+        }
+        console.log('appendHiAndToUpper ',appendHiAndToUpper('hello'));
+
+        function compose(funA,funB)
+        {
+            return function(x)
+            {
+                return funA(funB(x));
+            }
+        }
+        const newFun = compose(toUpper, appendHi);
+        console.log('NewFun ',newFun('hello'));
+
+        const inc = (x)=> x+1;
+        const double= (x) => x * 2;
+        const divBy2 = (x) => x/2;
+
+        const fun = compose( compose(divBy2,inc) ,double);
+        console.log('Fun ',fun(3));
+    </script>    
+</html>

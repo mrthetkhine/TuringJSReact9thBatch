@@ -1,0 +1,17 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+       
+       let obj = {
+            address2: {
+                city : 'ygn'
+            } 
+
+       };
+       console.log('Obj ', obj.address?.city);
+       console.log('Obj path ', R.path(['address2','city'],obj));
+       //obj.address.city = "Another city";
+       let obj2 = R.assocPath(['address','city'],' Another city ',obj);
+       console.log('Obj2 ',obj2);
+    </script>    
+</html>

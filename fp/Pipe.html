@@ -1,0 +1,35 @@
+<html>
+    
+    <script>
+       
+        function appendHi(str) {
+            return str+' hi';
+        }
+        function toUpper(str)
+        {
+            return str.toUpperCase();
+        }
+        function appendHiAndToUpper(str)
+        {
+            return toUpper( appendHi(str));
+        }
+        console.log('appendHiAndToUpper ',appendHiAndToUpper('hello'));
+
+        function pipe(...fns)// (funA,funB,func)
+        {
+            return function(x)
+            {
+                return fns.reduce( (input,fn)=>fn(input), x);
+            }
+        }
+        const newFun = pipe(toUpper, appendHi);
+        console.log('NewFun ',newFun('hello'));
+
+        const inc = (x)=> x+1;
+        const double= (x) => x * 2;
+        const divBy2 = (x) => x/2;
+
+        const fun = pipe( divBy2,inc,double);
+        console.log('Fun ',fun(3));
+    </script>    
+</html>

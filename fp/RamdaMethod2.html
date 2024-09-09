@@ -1,0 +1,12 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+       
+       let arr = [1,2,3,4,5];
+       console.log('head ',R.head(arr));
+       console.log('tail ',R.tail(arr));
+
+       const sum = (arr)=> R.length(arr)==1? R.head(arr): R.head(arr)+ sum(R.tail(arr));
+       console.log('Sum ',sum(arr));
+    </script>    
+</html>

@@ -1,0 +1,23 @@
+<html>
+    
+    <script>
+       
+       //5!= 5* 4* 3* 2* 1;
+       /*
+        5! = 5 * 4!
+        n! = n * (n-1)!
+       */
+      function fact(n)
+      {
+        if(n==0)
+        {
+            return 1;
+        }  
+        else 
+        {
+            return n * fact(n-1);
+        }    
+      }
+      console.log('Fact 4 ',fact(4));
+    </script>    
+</html>
