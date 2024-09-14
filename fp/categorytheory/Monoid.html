@@ -1,0 +1,39 @@
+<html>
+    
+    <script>
+        const Addition = {
+            identity:()=>0,
+            binaryOp:(x,y) => x + y,
+        };
+        const Multiplication = {
+            identity:()=>1,
+            binaryOp:(x,y)=>x*y
+        };
+        const Min = {
+            identity:()=>Number.MAX_SAFE_INTEGER,
+            binaryOp:(x,y)=>x <y ? x :y
+        };
+        const Max = {
+            identity:()=>Number.MIN_SAFE_INTEGER,
+            binaryOp:(x,y)=>x > y ? x :y
+        }
+        
+        //reduce
+        function fold(list, monoid)
+        {
+            return list.reduce(monoid.binaryOp, monoid.identity());
+        }
+        let list = [1,2,3,-4,5];
+        const total = fold(list,Addition);
+        console.log('Total ',total);
+
+        const multi = fold(list,Multiplication);
+        console.log('Multi ',multi);
+
+        const max = fold(list,Max);
+        console.log('Max ',max);
+        
+        const min = fold(list,Min);
+        console.log('Min ',min);
+    </script>    
+</html>

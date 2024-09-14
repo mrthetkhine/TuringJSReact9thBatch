@@ -1,0 +1,69 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+        function appendHi(str) {
+            return str.concat(' hi');
+        }
+        function toUpper(str)
+        {
+            return str.toUpperCase();
+        }
+        const MayBe = value =>({
+            value,
+            valueOf:()=>value,
+            map(fn) {
+                return this.isNothing()? MayBe.of(null): MayBe.of(fn(value));
+            },
+            isNothing:()=>value === undefined || value ===null ,
+            orElse(defaultvalue)
+            {
+                return this.isNothing()?defaultvalue:this;
+            }
+        })
+        MayBe.of = MayBe;
+
+        let employees = {
+            1: {
+                name : "Emp1 ",
+                
+            },
+            2: {
+                name :'Emp 2',
+                supervisor:1,
+            },
+            3:{
+                name : 'Emp 3',
+                supervisor:2
+            }
+        }   
+        function getSupervisorName(empId)
+        {
+            let emp = employees[empId];
+            if(emp)
+            {
+                let supervisorId = emp.supervisor;
+                if(supervisorId)
+                {
+                    let supervisor = employees[supervisorId];
+                    if(supervisor)
+                    {
+                        return supervisor.name;
+                    }
+                }
+            }
+        }
+        function getSupervisorNameV2(empId)
+        {
+            return MayBe.of(empId)
+                        .map(empId=>employees[empId])
+                        .map(employee=>employee.supervisor)
+                        .map(supervisorId => employees[supervisorId])
+                        .map(supervisor=>supervisor.name);
+        }
+        console.log('Sup 3 ',getSupervisorName(3));
+        console.log('Sup 1 ',getSupervisorName(1));
+
+        console.log('Sup 1 ',getSupervisorNameV2(1));
+        console.log('Sup 3 ',getSupervisorNameV2(3));
+    </script>    
+</html>

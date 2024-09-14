@@ -1,0 +1,71 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+        
+        let obj = {
+            name : 'MrTK',
+            email : 'me@gmail.com',
+            age : 40,
+        }
+        //minlength(3)
+        const minLength = (len)=>(input)=> input.length >= len;
+        const maxLength = (len)=>(input)=> input.length <= len;
+
+        const minValue = (limit)=>(value)=> value >= limit;
+        const maxValue = (limit)=>(value)=> value <= limit;
+
+        const validEmail = (email)=>email.includes('@');
+
+        const nameValid = (obj)=> minLength(3)(obj.name) && maxLength(10)(obj.name);
+        const ageValid = (obj)=> minValue(0)(obj.age) && maxValue(100)(obj.age);
+        const emailValid = (obj)=> validEmail(obj.email);
+
+        const And = {
+            identity:()=>true,
+            binaryOp:(x,y)=> x && y,
+        }
+        const Or = {
+            identity:()=>false,
+            binaryOp:(x,y)=> x || y,
+        }
+        /*
+        nameValid,ageValid
+        */
+        function and(...validators)
+        {
+            return function(obj)
+            {
+                //return validators.reduce((x,validator)=> And.binaryOp(x, validator(obj)),And.identity());
+                return validators.reduce( (previousValue, validatorFn)=> previousValue && validatorFn(obj), true);
+            }
+        }
+        function or(...validators)
+        {
+            return function(obj)
+            {
+                //return validators.reduce((x,validator)=> Or.binaryOp(x, validator(obj)),Or.identity());
+                return validators.reduce( (previousValue, validatorFn)=> previousValue || validatorFn(obj), false);
+            }
+        }
+        const andRule = and(nameValid,emailValid);
+        console.log('AndRule ',andRule({
+            name : 'MrTK',
+            email:'me@gmail.com'
+        }));
+        console.log('AndRule ',andRule({
+            name : 'TK',
+            email:'me@gmail.com'
+        }));
+        const orRule = or(nameValid,emailValid);
+        console.log('orRule ',orRule({
+            name : 'TK',
+            email:'me@gmail.com'
+        }));
+        const complexRule = or( nameValid, and( emailValid, ageValid));
+        console.log('complexRule ',complexRule({
+            name : 'TK',
+            email:'megmail.com',
+            age : -2
+        }));
+    </script>    
+</html>

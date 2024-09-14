@@ -1,0 +1,58 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+        
+        //Left ->failure
+        //Right->success
+        const Left = value =>({
+            value,
+            valueOf:()=>value,
+            map(fn) {
+                return Left.of(value);
+            },
+           
+        })
+        Left.of = Left;
+        const Right = value =>({
+            value,
+            valueOf:()=>value,
+            map(fn) {
+                return Right.of(fn(value));
+            },
+           
+        })
+        Right.of = Right;
+        let obj = {
+            name : 'MrTK',
+            email : 'me@gmail.com',
+            age : 40,
+        }
+        //minlength(3)
+        const minLength = (len)=>(input)=> input.length >= len;
+        const maxLength = (len)=>(input)=> input.length <= len;
+
+        const minValue = (limit)=>(value)=> value >= limit;
+        const maxValue = (limit)=>(value)=> value <= limit;
+
+        const validEmail = (email)=>email.includes('@');
+
+        const nameValid = (obj)=> minLength(3)(obj.name) && maxLength(10)(obj.name);
+        const ageValid = (obj)=> minValue(0)(obj.age) && maxValue(100)(obj.age);
+        const emailValid = (obj)=> validEmail(obj.email);
+
+        const validatorV2 = (validator)=>(errorMessage)=>obj=> validator(obj)?Right.of(obj):Left.of(errorMessage);
+        
+        const nameValidV2 = validatorV2(nameValid)('Invalid Name');
+        const ageValidV2 = validatorV2(ageValid)('Invalid Age');
+        const emailValidV2 = validatorV2(emailValid)('Invalid Email');
+
+        //and, or =>(obj)=>boolean, (obj)=>Either
+
+        console.log('nameValidV2 ',nameValidV2({
+            name: "MrTK"
+        }));
+        console.log('ageValidV2 ',ageValidV2({
+            age: "-29"
+        }));
+    </script>    
+</html>

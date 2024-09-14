@@ -1,0 +1,55 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+        
+        //Left ->failure
+        //Right->success
+        const Left = value =>({
+            value,
+            valueOf:()=>value,
+            map(fn) {
+                return Left.of(value);
+            },
+            matchWith(context)//{left,right}
+            {
+                console.log('Left matchWith');
+                return context.left(value);
+            }
+        })
+        Left.of = Left;
+        const Right = value =>({
+            value,
+            valueOf:()=>value,
+            map(fn) {
+                return Right.of(fn(value));
+            },
+            matchWith(context)//{left,right}
+            {
+                console.log('Right matchWith');
+                return context.right(value);
+            }
+        })
+        Right.of = Right;
+
+        function div(a,b)
+        {
+            if( isNaN(a) || isNaN(b))
+            {
+                //throw new Error('A or b is NaN');
+                return Left.of('A or B is NaN')
+            }
+            else
+            {
+                return Right.of(a/b);
+            }
+        }
+        const inc = (x)=>x+1;
+        div(10,2)
+            .matchWith({
+                left:(err)=>(console.error(err), Right.of(0)),
+                right:(data)=>(console.log('Success ',data),Right.of(data)),
+            })
+            .map(inc)
+            .map(console.log);
+    </script>    
+</html>

@@ -1,0 +1,55 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+        
+        let obj = {
+            name : 'MrTK',
+            email : 'me@gmail.com',
+            age : 40,
+        }
+        //minlength(3)
+        const minLength = (len)=>(input)=> input.length >= len;
+        const maxLength = (len)=>(input)=> input.length <= len;
+
+        const minValue = (limit)=>(value)=> value >= limit;
+        const maxValue = (limit)=>(value)=> value <= limit;
+
+       
+
+        console.log('MinLength 3 TK',minLength(3)('TK'));
+        console.log('MinLength 3 MrTK',minLength(3)('MrTK'));
+
+        console.log('maxLength 3 MrTK',maxLength(3)('MrTK'));
+        console.log('maxLength 3 MTK',maxLength(3)('MTK'));
+
+        console.log('maxValue 100 5',maxValue(100)(5));
+        console.log('maxValue 5 29',maxValue(5)(29));
+
+        console.log('minValue 5 3',minValue(5)(3));
+        console.log('minValue 5 13',minValue(5)(13));
+
+        const validEmail = (email)=>email.includes('@');
+
+        const nameValid = (obj)=> minLength(3)(obj.name) && maxLength(10)(obj.name);
+        const ageValid = (obj)=> minValue(0)(obj.age) && maxValue(100)(obj.age);
+        const emailValid = (obj)=> validEmail(obj.email);
+
+        console.log('validEmail ',validEmail('mr@gmail.com'));
+        console.log('Name Valid ',nameValid({
+            name: 'TK'
+        }));
+        console.log('Name Valid ',nameValid({
+            name: 'MrTK'
+        }));
+
+        console.log('age Valid 20',ageValid({
+            age: 20
+        }));
+        console.log('age Valid 201 ',ageValid({
+            age: 201
+        }));
+        console.log('emvail Valid ',emailValid({
+            email: 'me@gmail.com'
+        }));
+    </script>    
+</html>
