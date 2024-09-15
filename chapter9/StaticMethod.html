@@ -1,0 +1,24 @@
+<html>
+
+<script>
+    
+    class Counter
+    {
+        count = 0;
+        constructor(count)
+        {
+            this.count = count;
+            Counter.objCount++;
+        }
+        static displayCount()
+        {
+            console.log('This ',Counter.objCount);
+        }
+    }
+    Counter.objCount =0;
+    let counter = new Counter(1);
+    let counter2 = new Counter(1);
+    Counter.displayCount();
+</script>
+
+</html>

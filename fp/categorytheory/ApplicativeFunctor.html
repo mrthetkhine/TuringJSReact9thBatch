@@ -1,0 +1,27 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+
+        const Container = value =>({
+            value,
+            valueOf:()=>value,
+            map:(fn)=> Container(fn(value)),//fn(param1)
+            ap(another)//another container(value)
+            {
+                return another.map(value);
+            }
+        })
+        Container.of = Container;
+
+        let add = (x,y)=>x+y;
+        let curriedAdd = R.curry(add);
+
+        let one = Container.of(1);
+        let two = Container.of(2);
+        let result = one
+                        .map(curriedAdd)
+                        .ap(two);
+        console.log('Result ',result.valueOf());
+
+    </script>    
+</html>

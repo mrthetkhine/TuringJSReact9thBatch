@@ -1,0 +1,52 @@
+<html>
+
+<script>
+    /*
+    let circle = {
+        radius: 10,
+        get area()
+        {
+            return Math.PI* this.radius * this.radius;
+        }
+    }*/
+    class Circle
+    {
+        constructor(radius)
+        {
+            console.log('Contructor run');
+            this.radius = radius;
+        } 
+        get area()
+        {
+            return Math.PI* this.radius * this.radius;
+        }
+        display()
+        {
+            console.log('Circle radius ',this.radius);
+        }
+    }
+    let circle1 = new Circle(10);
+    let circle2 = new Circle(20);
+    console.log('Circle 1 ',circle1);
+    console.log('Circle 2 ',circle2);
+    console.log('circle1 instanceof Circle  ',circle1 instanceof Circle);
+    console.log('circle1 instanceof Object  ',circle1 instanceof Object);
+    console.log('Circle 1 ',circle1.area);
+    console.log('Circle 2 ',circle2.area);
+
+    circle1.display();
+    circle2.display();
+    
+    function Human(name)
+    {
+        this.name = name;
+        this.display= function()
+        {
+            console.log('My name is ',this.name);
+        }
+    }
+    let h1 = new Human('TK');
+    h1.display();
+</script>
+
+</html>

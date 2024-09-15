@@ -10,7 +10,23 @@
             map(fn) {
                 return Left.of(value);
             },
-           
+            matchWith(context)//{left,right}
+            {
+                
+                return context.left(value);
+            },
+            isLeft()
+            {
+                return true;
+            },
+            and(other)
+            {
+                return other.isLeft()? Left.of([...value, ...other.value]): this;
+            },
+            or(other)
+            {
+                return other.isLeft()? Left.of([...value, ...other.value]): other;
+            }
         })
         Left.of = Left;
         const Right = value =>({
@@ -19,7 +35,23 @@
             map(fn) {
                 return Right.of(fn(value));
             },
-           
+            matchWith(context)//{left,right}
+            {
+                
+                return context.right(value);
+            },
+            isLeft()
+            {
+                return false;
+            },
+            and(other)
+            {
+                return other.isLeft()? other: this;
+            },
+            or(other)
+            {
+                return this;
+            }
         })
         Right.of = Right;
         let obj = {
@@ -40,7 +72,7 @@
         const ageValid = (obj)=> minValue(0)(obj.age) && maxValue(100)(obj.age);
         const emailValid = (obj)=> validEmail(obj.email);
 
-        const validatorV2 = (validator)=>(errorMessage)=>obj=> validator(obj)?Right.of(obj):Left.of(errorMessage);
+        const validatorV2 = (validator)=>(errorMessage)=>obj=> validator(obj)?Right.of(obj):Left.of([errorMessage]);
         
         const nameValidV2 = validatorV2(nameValid)('Invalid Name');
         const ageValidV2 = validatorV2(ageValid)('Invalid Age');
@@ -48,11 +80,69 @@
 
         //and, or =>(obj)=>boolean, (obj)=>Either
 
+        /*
         console.log('nameValidV2 ',nameValidV2({
             name: "MrTK"
         }));
         console.log('ageValidV2 ',ageValidV2({
             age: "-29"
         }));
+        */
+        function and(...validators)
+        {
+            return function(obj)
+            {
+                return validators.reduce( (input,validator)=> input.and(validator(obj)) , Right.of(obj));
+            }
+        }
+        function or(...validators)
+        {
+            return function(obj)
+            {
+                return validators.reduce( (input,validator)=> input.or(validator(obj)) , Left.of([]));
+            }
+        }
+        /*
+        Left.of(['Error 1'])
+            .and(Left.of(['Error 2']))
+            .matchWith({
+                left:(error)=>console.error('Validtion error ',error),
+                right:(data)=>console.log('Data ',data)
+            })
+        Left.of(['Error 1'])
+            .and(Right.of(obj))
+            .matchWith({
+                left:(error)=>console.error('Validtion error ',error),
+                right:(data)=>console.log('Data ',data)
+            })
+        Right.of(obj)
+            .and(Right.of(obj))
+            .matchWith({
+                left:(error)=>console.error('Validtion error ',error),
+                right:(data)=>console.log('Data ',data)
+            })
+        Right.of(obj)
+            .and(Left.of(['Error 1']))
+            .matchWith({
+                left:(error)=>console.error('Validtion error ',error),
+                right:(data)=>console.log('Data ',data)
+            })
+        */
+       const andRule = and(nameValidV2,ageValidV2);
+       const orRule = or(nameValidV2,ageValidV2);
+       andRule({
+            name :"MrTK",
+            age:10
+       }).matchWith({
+                left:(error)=>console.error('Validtion error ',error),
+                right:(data)=>console.log('Data ',data)
+            });
+        orRule({
+            name :"TK",
+            age:103
+       }).matchWith({
+                left:(error)=>console.error('Validtion error ',error),
+                right:(data)=>console.log('Data ',data)
+            })
     </script>    
 </html>

@@ -1,0 +1,56 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script>
+
+        const Container = value =>({
+            value,
+            //valueOf:()=>value,
+            map:(fn)=> Container(fn(value)),//fn(param1)
+            ap(another)//another container(value)
+            {
+                return another.map(value);
+            },
+            flat()
+            {
+                return value;
+            },
+            flatMap(fn)
+            {
+                return fn(value);
+            }
+
+        })
+        Container.of = Container;
+        const MayBe = value =>({
+            value,
+            //valueOf:()=>value,
+            map(fn) {
+                return this.isNothing()? MayBe.of(null): MayBe.of(fn(value));
+            },
+            isNothing:()=>value === undefined || value ===null ,
+            orElse(defaultvalue)
+            {
+                return this.isNothing()?defaultvalue:this;
+            }
+        })
+        MayBe.of = MayBe;
+
+        function toMayBe(data)//Monadic function
+        {
+            return MayBe.of(data);
+        }
+        const double = (x)=>x*2;
+        const inc = (x) => x + 1;
+        let result = Container.of(1)
+                              .map(toMayBe)// Container(MayBe(1))
+                              .flat()
+                              .map(double)
+                              //.map(inc)
+                            
+        console.log('Result ',result);
+        result = Container.of(1)
+                              .flatMap(toMayBe)// Container(MayBe(1))
+                              .map(double)
+                              console.log('Result ',result);
+    </script>    
+</html>
