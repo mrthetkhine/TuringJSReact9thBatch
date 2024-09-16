@@ -1,0 +1,64 @@
+<html>
+
+<script>
+    class Human
+    {
+        constructor(name)
+        {
+            console.log('Human consructor');
+            this.name = name;
+        }
+        display()
+        {
+            console.log('Name ',this.name);
+        }
+        eat()
+        {
+            console.log('Eat ',this.name);
+        }
+        work()
+        {
+            console.log('I Just work');
+        }
+    }
+    class Teacher extends Human
+    {
+        constructor(name)
+        {   
+            console.log('Teacher consructor');
+            super(name);
+        }   
+        work()
+        {
+            console.log('I teach students');
+        }
+    }
+    class Doctor extends Human
+    {
+        constructor(name)
+        {   
+            console.log('Doctor consructor');
+            super(name);
+        }   
+        work()
+        {
+            console.log('I treat my patient');
+            super.work();
+        }
+    }
+    let obj = new Teacher('Tk');
+    obj.display();
+    obj.eat();
+    obj.work();
+
+    let obj2 = new Doctor('Dr Someone');
+    obj2.display();
+    obj2.eat();
+    obj2.work();
+    
+    console.log('obj instanceof Human ',obj instanceof Human);
+    console.log('obj instanceof Teacher ',obj instanceof Teacher);
+
+</script>
+
+</html>

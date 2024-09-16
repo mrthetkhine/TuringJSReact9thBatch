@@ -1,0 +1,26 @@
+<html>
+
+<script>
+    class Employee
+    {
+        work()
+        {
+            console.log('Emp work');
+        }
+    }
+    class Manager
+    {
+        constructor()
+        {
+            this.employee = new Employee();
+        }
+        work()
+        {
+            this.employee.work();
+        }
+    }
+    let manager = new Manager();
+    manager.work();
+</script>
+
+</html>

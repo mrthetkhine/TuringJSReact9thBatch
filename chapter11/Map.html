@@ -1,0 +1,40 @@
+<html>
+
+<script>
+    let map = new Map([
+        ["one", 1],
+        ["two",2]
+    ]);
+    console.log('Map ',map);
+
+    map.set('one',1000);
+    console.log('Map ',map);
+    console.log('get ',map.get('one'));
+    console.log('get three ',map.get('three'));
+    console.log('Map.has ',map.has('one'));
+    console.log('Map.has three ',map.has('three'));
+
+    map.set('three',3000);
+    console.log('Map ',map);
+    console.log('Map.size ',map.size);
+
+    console.log('Keys ',map.keys());
+    console.log('Values ',map.values());
+
+    let values = [...map.values()];
+    console.log('Values ',values);
+    for(const [key,value] of map.entries())
+    {
+        console.log('Key ',key, ' values ',value);
+    }
+    //map.clear();
+    console.log('Map clear ',map);
+    let obj = {
+        name : "TK",
+        age: 40,
+    }
+    let map2 = new Map(Object.entries(obj));
+    console.log('Map2 ',map2);
+</script>
+
+</html>
