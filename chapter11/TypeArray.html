@@ -1,0 +1,22 @@
+<html>
+<body>
+        <button type="button" id="btnAllocate">Allocate</button>
+        <button type="button" id="btnAssignNull">AssignNull</button>
+</body>
+<script>
+    let arr; 
+   
+    document.getElementById('btnAllocate')
+            .addEventListener('click',()=>{
+                console.log('Btn Clicked');
+                arr = [];
+                for(let i=0; i< 10000;i++)
+                {
+                    arr.push(new Int8Array(1000));
+                }
+                
+            });
+    
+</script>
+
+</html>

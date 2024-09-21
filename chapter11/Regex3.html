@@ -1,0 +1,41 @@
+<html>
+
+<script>
+    
+    let pattern ;
+    
+    pattern = /\d+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} abc0 `,pattern.test('abc0'));
+
+    pattern = /\d*/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} abc0 `,pattern.test('abc0'));
+
+    pattern = /\d?/g;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} abc0 `,pattern.test('abc0'));
+
+    pattern = /\d{3,5}/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} 12 `,pattern.test('12'));
+    console.log(`test ${pattern} 123456 `,pattern.test('123456'));
+
+    pattern = /\d{3,}/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} 12 `,pattern.test('12'));
+    console.log(`test ${pattern} 123456 `,pattern.test('123456'));
+
+    pattern = /\d{3}/;
+   
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} 123 `,pattern.test('123'));
+    console.log(`test ${pattern} 123456 `,pattern.test('123456'));
+</script>
+
+</html>

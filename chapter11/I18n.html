@@ -1,0 +1,13 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+<script>
+    
+    let d = new Date();
+    let opts = { year: "numeric", era: "short" };
+    console.log (Intl.DateTimeFormat("en", opts).format(d));
+    console.log(Intl.DateTimeFormat("en-u-ca-buddhist", opts).format(d));
+    console.log(Intl.DateTimeFormat("en-US").format(d));
+    console.log(Intl.DateTimeFormat("mm").format(d));
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+
+<script>
+    
+    let pattern ;
+    
+    pattern = /\d+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+
+    pattern = /\D+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+
+    pattern = /\w+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} 123aba `,pattern.test('123aba'));
+    console.log(`test ${pattern} #$$ `,pattern.test('#$$'));
+
+    pattern = /\W+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} 123aba `,pattern.test('123aba'));
+    console.log(`test ${pattern} #$$ `,pattern.test('#$$'));
+
+    pattern = /\s+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+    console.log(`test ${pattern} \t `,pattern.test('\t'));
+
+    pattern = /\S+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+
+    pattern = /(a|b)+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} aaa `,pattern.test('aaa'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+</script>
+
+</html>

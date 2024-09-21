@@ -1,0 +1,38 @@
+<html>
+
+<script>
+    
+    let pattern ;
+    
+    pattern = /^\d+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} b0012 `,pattern.test('b0012'));
+    console.log(`test ${pattern} 123 `,pattern.test('123'));
+
+    pattern = /^\d+$/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} b0012c `,pattern.test('0012c'));
+    console.log(`test ${pattern} 123 `,pattern.test('123'));
+    
+    pattern = /\bm/;
+    console.log(`test ${pattern} another moon `,pattern.test('another moon'));
+    console.log(`test ${pattern} am `,pattern.test('am'));
+    console.log(`test ${pattern} ama `,pattern.test('ama'));
+
+    pattern = /\Bm/;
+    console.log(`test ${pattern} another moon `,pattern.test('another moon'));
+    console.log(`test ${pattern} am `,pattern.test('am'));
+    console.log(`test ${pattern} ama `,pattern.test('ama'));
+
+    pattern = /Java(?=Script)/;
+    console.log(`test ${pattern} JavaScript `,pattern.test('JavaScript'));
+    console.log(`test ${pattern} VBScript `,pattern.test('VBScript'));
+    console.log(`test ${pattern} JScript `,pattern.test('JScript'));
+
+    pattern = /Java(?!Script)/;
+    console.log(`test ${pattern} JavaScript `,pattern.test('JavaScript'));
+    console.log(`test ${pattern} JavaProgram `,pattern.test('JavaProgram'));
+    console.log(`test ${pattern} JavaEE `,pattern.test('JavaEE'));
+</script>
+
+</html>

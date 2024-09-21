@@ -1,0 +1,34 @@
+<html>
+
+<script>
+    
+    let pattern = /a+b+/;
+    console.log('test ab ',pattern.test('ab'));
+    console.log('test aaab ',pattern.test('aaab'));
+    console.log('test aaabbb ',pattern.test('aaabbb'));
+    console.log('test cdb ',pattern.test('cdb'));
+
+    pattern = /[abc]+/;
+    console.log('test /[abc]+/ abc ',pattern.test('abc'));
+    console.log('test /[abc]+/ aa ',pattern.test('aa'));
+    console.log('test /[abc]+/ cd ',pattern.test('cd'));
+    console.log('test /[abc]+/ de ',pattern.test('de'));
+
+    pattern = /[0123456789]+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+
+    pattern = /[0-9]+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+
+    pattern = /[^0-9]+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+
+    pattern = /.+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} 0012 `,pattern.test('0012'));
+</script>
+
+</html>

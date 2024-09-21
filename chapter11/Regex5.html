@@ -1,0 +1,26 @@
+<html>
+
+<script>
+    
+    let pattern ;
+    
+    pattern = /(abc)+/;
+    console.log(`test ${pattern} abc `,pattern.test('abc'));
+    console.log(`test ${pattern} abcabc`,pattern.test('abcabc'));
+    console.log(`test ${pattern} ABC`,pattern.test('ABC'));
+
+    pattern = /(abc)+/i;
+
+    console.log(`test ${pattern} ABC`,pattern.test('ABC'));
+
+    console.log(`"JavaScript".search(/script/ui)  `,"JavaScript".search(/script/ui) );
+
+    let text = "javascript programming";
+    text = text.replace(/javascript/gi, "JavaScript");
+    console.log('text ',text);
+
+    let result = "17 plus 8 equals 123456".match(/\d{2,5}/g);
+    console.log('Result ',result);
+</script>
+
+</html>

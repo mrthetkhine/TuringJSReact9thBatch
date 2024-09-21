@@ -1,0 +1,21 @@
+<html>
+<body>
+        <button type="button" id="btnAllocate">Allocate</button>
+        <button type="button" id="btnAssignNull">AssignNull</button>
+</body>
+<script>
+    
+    let map = new WeakMap();
+    document.getElementById('btnAllocate')
+            .addEventListener('click',()=>{
+                let arr = [];
+                for(let i=0; i< 10000;i++)
+                {
+                    arr.push(new Array(1000));
+                }
+               
+                map.set('arr',arr);
+            });
+</script>
+
+</html>
