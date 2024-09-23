@@ -1,0 +1,59 @@
+<html>
+
+<script>
+    
+    let data = {
+        value : 200
+    }
+    console.log('Hello ',data);
+    let arr = [
+        {
+            name : 'TK',
+            age :40,
+        },
+        {
+            another: 'Another',
+            age : 14
+        
+        }
+        
+    ];
+    console.log('Arr ',arr);
+    console.log('Arr ',arr[0]);
+    arr[0].age = 50;
+    console.log('Arr ',arr);
+    console.warn('Warning');
+    console.debug('Debug');
+    console.error('Error');
+
+    function display(message)
+    {
+        console.assert(message!=null,' Message should not null');
+        console.log('Display ',message);
+        console.trace('This is trace');
+    }
+    console.time('timer1');
+    display();
+    display('Hello');
+    console.table(arr);
+
+    console.count('Hello');
+    console.count('Hello');
+    console.count('Hello');
+    console.countReset('Hello');
+    console.count('Hello');
+
+    console.group();
+    console.log('Level 1');
+    console.group();
+    console.groupCollapsed();
+    console.log('Level 2');
+    console.groupEnd();
+    console.groupEnd();
+    console.log('Normal');
+
+    console.timeLog('timer1','This is last call');
+    console.timeEnd('timer1');
+</script>
+
+</html>

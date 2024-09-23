@@ -1,0 +1,37 @@
+<html>
+    <script>
+
+        console.log('started');
+       
+        function ourFetch(url,cb)
+        {
+            let request = new XMLHttpRequest();
+            request.open('GET',url);
+            request.send();
+            request.onload = function()
+            {
+                //console.log('Response ',request.responseText);
+                cb(JSON.parse(request.responseText))
+            }
+            request.error = function()
+            {
+                console.log('Error ',request.responseText);
+            }
+        }
+        ourFetch('https://jsonplaceholder.typicode.com/todos/1',(json)=>{
+            console.log('Todo1 ',json);
+        });
+        ourFetch('https://jsonplaceholder.typicode.com/todos/2',(json)=>{
+            console.log('Todo 2 ',json);
+        });
+
+      
+        ourFetch('https://jsonplaceholder.typicode.com/todos/3',(todo3)=>{
+            console.log('Todo 3 done');
+            ourFetch('https://jsonplaceholder.typicode.com/todos/4',(todo4)=>{
+                console.log('Todo 4 done todo3 ',todo3, ' Todo 4 ',todo4);
+            });
+        });
+        console.log('ended');
+    </script>
+</html>

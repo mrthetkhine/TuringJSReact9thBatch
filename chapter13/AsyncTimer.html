@@ -1,0 +1,18 @@
+<html>
+    <script>
+
+        function callback(retValue)
+        {
+            console.log('Result from div ',retValue);
+        }
+        function div(a,b,cb)
+        {
+            setTimeout(() => {
+                console.log('Computed division ',a/b);
+                cb(a/b);
+            }, 2000);
+        }
+        div(10,2,callback);
+        console.log('Done ');
+    </script>
+</html>

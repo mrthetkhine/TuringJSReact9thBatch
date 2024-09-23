@@ -1,0 +1,39 @@
+<html>
+
+<script>
+    class Range
+    {
+        constructor(from,to)
+        {
+            this.from = from;
+            this.to = to;
+        }
+        [Symbol.iterator]()
+        {
+            let start = this.from;//0
+            let to = this.to;
+            return {
+                next()
+                {
+   
+                    return {
+                        value: start>to+1?undefined: start++,
+                        done: start>to+1,
+                    }
+                }
+            }
+        }
+    }
+    let range = new Range(1,5);
+    /*
+    let iterator = range[Symbol.iterator]();
+    console.log('Next ',iterator.next());
+    console.log('Next ',iterator.next());
+    */
+    for(const item of range)
+    {
+        console.log('Item ',item);
+    }
+</script>
+
+</html>

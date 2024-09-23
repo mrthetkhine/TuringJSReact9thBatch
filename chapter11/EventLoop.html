@@ -1,0 +1,35 @@
+<html>
+    <style>
+        #box
+        {
+            width:20px;
+            height:20px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+<body>
+    <div id="timerCounter"> </div>
+    <div id="box"></div>
+    <button type="button" id="btnSomething">Stop</button>
+</body>
+<script>
+    
+    document.getElementById('btnSomething')
+            .addEventListener('click',()=>{
+                console.log('Btn Click');
+            });
+   function delay(ms)
+   {
+        let start = new Date();
+        while( new Date()-start <=ms);
+   }  
+   setTimeout(()=>{
+    console.log('Hello');
+   },0);
+   delay(3000);//block
+   
+   console.log('World');
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <script>
+
+        console.log('started');
+       
+        function ourFetch(url)
+        {
+            return new Promise((resolve,reject)=>{
+                let request = new XMLHttpRequest();
+                request.open('GET',url);
+                request.send();
+                request.onload = function()
+                {
+                    //console.log('Response ',request.responseText);
+                    resolve(JSON.parse(request.responseText))
+                }
+                request.error = function(err)
+                {
+                    console.log('Error ',request.responseText);
+                    reject(err);
+                }
+            });
+            
+        }
+        let p1 = ourFetch('https://jsonplaceholder.typicode.com/todos/1')
+                //.then(data=>console.log('Success ',data),error=>console.log('Error ',error))
+        let p2 = ourFetch('https://jsonplaceholder.typicode.com/todos/2');
+        Promise.all([p1,p2])
+                .then(data=>console.log('All done ',data));
+        
+    </script>
+</html>

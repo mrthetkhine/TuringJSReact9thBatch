@@ -1,0 +1,24 @@
+<html>
+    <script>
+
+       /* 
+       Promise.resolve(100)
+              .then(data=>data*2)
+              .then(data=>console.log('Data is ',data))  
+       */ 
+        /*
+       Promise.reject('Error')
+              .then(data=>data*2,err=>{
+                console.log('Error ',err);
+                //return 400;
+                //throw new Error('Second level error ');
+                return Promise.reject('Second level reject');
+              })
+              .then(data=>console.log('Data is ',data), (err)=> console.log('Error at last line',err)) 
+       */ 
+       Promise.resolve(10)
+              .then(data=>Promise.reject(data))
+              .then(data=>data*2, error=> Promise.resolve(error*2))
+              .then(data=>console.log('Success ',data), error=>console.log('Error ',error)) 
+    </script>
+</html>

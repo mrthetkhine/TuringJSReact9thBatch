@@ -1,0 +1,16 @@
+<html>
+    <script>
+
+        console.log('started');
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response=>response.json())
+            .then(data=>console.log('Todo all ',data));
+        fetch('https://jsonplaceholder.typicode.com/todos/2')
+            .then(response=>response.json())
+            .then(data=>console.log('Todo 2 ',data))
+        fetch('https://jsonplaceholder.typicode.com/todos/3')
+            .then(response=>response.json())
+            .then(data=>console.log('Todo 3 ',data))
+        console.log('ended');
+    </script>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <script>
+
+        /*
+        console.log('started');
+        fetch('https://jsonplaceholder.typicode.com1/todos')
+            .then(response=>response.json(),(err)=>console.error('Error callback',err))
+            .catch(err=>console.log('Catch ',err))
+        */
+        console.time('api');
+        /*
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response=>response.json())
+            .then(todo1Json=>{
+                fetch('https://jsonplaceholder.typicode.com/users/1')
+                    .then(resp=>resp.json())
+                    .then(userJSON=>{
+                        console.timeLog('api')
+                        console.log('Tod1 ',todo1Json, ' User 2 ',userJSON);
+                    })
+            })
+        */ 
+       let p1 = fetch('https://jsonplaceholder.typicode.com/todos/1')
+                    .then(response=>response.json());
+       let p2 = fetch('https://jsonplaceholder.typicode.com/users/1')
+                    .then(response=>response.json());
+       Promise.all([p1,p2])
+              .then(data=>{
+                console.timeLog('api');
+                console.log('Data ',data);
+              })
+    </script>
+</html>

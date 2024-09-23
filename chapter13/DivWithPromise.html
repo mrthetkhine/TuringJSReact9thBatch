@@ -1,0 +1,28 @@
+<html>
+    <script>
+
+     function div(a,b)
+     {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                    console.log('Computed ',a/b);
+                    if(isNaN(a) || isNaN(b))
+                    {
+                        reject('A or B is NaN')
+                    }
+                    else
+                    {
+                        resolve(a/b);
+                    }
+                    
+            },2000);
+        });
+
+       
+     }
+     console.log('Started');
+     div(10,NaN)
+        .then(data=>console.log('Result from promise ',data),err=>console.log('Error case ',err));
+     console.log('End');
+    </script>
+</html>

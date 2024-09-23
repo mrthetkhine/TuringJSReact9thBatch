@@ -1,0 +1,37 @@
+<html>
+    <style>
+        #box
+        {
+            width:20px;
+            height:20px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+<body>
+    <div id="timerCounter"> </div>
+    <div id="box"></div>
+    <button type="button" id="btnStop">Stop</button>
+</body>
+<script>
+    
+    let clock;
+    let x = 10;
+    document.getElementById('btnStop')
+            .addEventListener('click',()=>{
+                clearInterval(clock);
+            });
+    clock = setInterval(()=>{
+        document.getElementById('timerCounter').innerText=(new Date());
+        let box = document.getElementById('box');
+        x += 10;
+        box.style.left = x+'px';
+        //console.log('Box ',box);
+        //console.log('Move ',x);
+   },1000);
+   setTimeout(()=>{
+    console.log('Set timeout');
+   },1000);
+</script>
+
+</html>
