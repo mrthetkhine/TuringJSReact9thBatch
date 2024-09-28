@@ -1,0 +1,37 @@
+
+<html>
+    <script>
+        /*
+        fetch(url)
+            .then(response=>response.json())
+            return json;
+        */
+       /*
+        async function getTodo() {
+            let response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+            let json = await response.json();
+            let response2 = await fetch('https://jsonplaceholder.typicode.com/todos/2')
+            let json2 = await response2.json();
+            return [json,json2];
+        }*/
+       async function getTodoUrl(url) 
+       {
+            let response = await fetch(url);
+            let json = await response.json();
+            return json;
+       }
+        async function getTodo() {
+            let arr = [getTodoUrl('https://jsonplaceholder.typicode.com/todos/1'),
+                        getTodoUrl('https://jsonplaceholder.typicode.com/todos/2')
+                    ];
+            let allJson = await Promise.all(arr);
+            console.log('Promise ',allJson);
+        }
+        async function getData() {
+            await getTodo();
+            
+        }
+        getData();
+
+    </script>
+</html>

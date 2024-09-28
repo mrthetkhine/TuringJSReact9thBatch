@@ -1,0 +1,29 @@
+
+<html>
+    <script>
+        /*
+        function validate(obj)
+        {
+            return obj.name !=null && obj.name !==undefined 
+                    && obj.age!=null && obj.age!=undefined;
+        }*/ 
+
+        function validate(obj)
+        {
+            let result = true;
+            for(const prop in obj)
+            {
+                result = result && obj[prop]!=null && obj[prop]!=undefined;
+            }
+            return result;
+        }
+        console.log('valid ',validate({
+            name : "TK",
+            age : undefined
+        }));
+        console.log('valid ',validate({
+            address : "Somewhere",
+           
+        }));
+    </script>
+</html>

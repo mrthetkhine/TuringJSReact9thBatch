@@ -1,0 +1,16 @@
+
+<html>
+    <script>
+        async function getTodo(url) {
+            let response = await fetch(url)
+            let json = await response.json();
+            return json;
+        }
+        async function getData() {
+            let todo1 = await getTodo('https://jsonplaceholder.typicode.com/todos/3');
+            console.log('todo1 ',todo1);
+        }
+        getData();
+
+    </script>
+</html>

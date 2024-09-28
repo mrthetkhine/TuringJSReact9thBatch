@@ -1,0 +1,19 @@
+
+<html>
+    <script>
+        Promise.resolve(100)//
+                .then(data=>{
+                    throw new Error('We got error')
+                }, err=>3)
+                .catch(err=>{
+                    console.log('Error catch ',err)
+                    return 200;
+                })
+                .finally(()=>{
+                    console.log('Executed finally');
+                })
+                .then(x=>x+1, err=> 'Some bad')
+                .then(data=>console.log('Success ',data),err=>console.log('Problem ',problem))
+
+    </script>
+</html>

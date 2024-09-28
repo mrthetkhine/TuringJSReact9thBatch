@@ -1,0 +1,44 @@
+
+<html>
+    <script>
+        /*
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(resp=>resp.json())
+            .then(todo1=>fetch('https://jsonplaceholder.typicode.com/todos/2')
+                        .then(rep2=>rep2.json())
+                        .then(todo2=>{
+                            console.log('Tod1 ',todo1, ' Todo2 ',todo2);
+                        })
+                    )
+        */
+       
+       let p1 = fetch('https://jsonplaceholder.typicode.com/todos/1')
+                    .then(response=>response.json());
+       let p2 = fetch('https://jsonplaceholder.typicode.com/todos/2')
+                    .then(response=>response.json());
+       Promise.allSettled([p1,p2])
+              .then(data=>{
+                console.timeLog('api');
+                console.log('Data ',data);
+              })
+       
+        let p3 = fetch('https://jsonplaceholder.typicode.com/todos/3')
+                    .then(response=>response.json());
+        let p4 = fetch('https://jsonplaceholder.typicode.com/todos/4')
+                    .then(response=>response.json());
+        Promise.any([p3,p4])
+                .then(data=>console.log('Any resolved ',data))
+        const promise1 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 500, 'one');
+            });
+
+        const promise2 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 100, 'two');
+        });
+
+        Promise.race([promise1, promise2]).then((value) => {
+            console.log(value);
+            // Both resolve, but promise2 is faster
+        });
+    </script>
+</html>

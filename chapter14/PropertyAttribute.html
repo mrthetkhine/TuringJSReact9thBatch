@@ -1,0 +1,35 @@
+
+<html>
+    <script>
+        let obj ={
+            name : "TK",
+            age : 40
+        }
+        console.log('Object. ',Object.getOwnPropertyDescriptor(obj,'name'));
+        console.log('window.top ',Object.getOwnPropertyDescriptor(window,'top'));
+
+        Object.defineProperty(obj, "address",{
+            //value: "Somewhere", 
+            get()
+            {
+                console.log('Getter');
+                return "somewhere"
+            },
+            set(newValue)
+            {
+                console.log('setter');
+            },
+            //writable: true, 
+            enumerable: true, 
+            configurable: false
+        });
+
+        for(let prop in obj)
+        {
+            console.log('Prop ',prop);
+        }
+        obj.address = "Another";
+        //delete obj.address;
+        console.log('Obj ',obj.address);
+    </script>
+</html>

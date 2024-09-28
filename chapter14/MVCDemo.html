@@ -1,0 +1,47 @@
+
+<html>
+    <body>
+        Name <span id="txtName">
+
+        </span>
+        Age <span id="txtAge">
+
+        </span>
+    </body>
+    <script>
+        let model = {
+            name : "TK",
+            age : 40
+        }
+        function update(model)
+        {
+            document.getElementById('txtName').innerText = model.name;
+            document.getElementById('txtAge').innerText = model.age;
+            console.log('Update UI');
+        }
+        //update(model);
+
+        function mvcProxy(obj)
+        {
+            let proxy = {};
+            for(let prop in obj)
+            {
+                Object.defineProperty(proxy,prop,{
+                    get()
+                    {
+                        return obj[prop];
+                    },
+                    set(newValue)
+                    {
+                        console.log('Update property ',prop, ' Value ',newValue);
+                        obj[prop] = newValue;
+                        update(obj);
+                    }
+                })
+            }
+            return proxy;
+        }
+        let proxy = mvcProxy(model);
+        proxy.name = "Change name";
+    </script>
+</html>

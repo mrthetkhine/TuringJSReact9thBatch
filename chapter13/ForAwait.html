@@ -1,0 +1,27 @@
+
+<html>
+    <script>
+        let urls = [
+            'https://jsonplaceholder.typicode.com/todos/1',
+            'https://jsonplaceholder.typicode.com/todos/2',
+            'https://jsonplaceholder.typicode.com/todos/3',
+            'https://jsonplaceholder.typicode.com/todos/4'
+        ] 
+        async function process() {
+            let promises = urls.map(url=>fetch(url));
+            /*
+            for(const p of promises)
+            {
+                let response = await p;
+                let json = await response.json();
+                console.log('JSON ',json);
+            }*/
+            for await(const p of promises)
+            {
+                let json = await p.json();
+                console.log('JSON ',json);
+            }
+        }
+        process();
+    </script>
+</html>

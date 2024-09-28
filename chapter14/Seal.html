@@ -1,0 +1,29 @@
+
+<html>
+   
+    <script>
+        let model = {
+            name : "TK",
+            age : 40
+        }
+        Object.seal(model);
+        console.log('isSealed ',Object.isSealed(model));
+        model.address = "Another";
+        model.name = "Someone"
+        console.log('model ',model);
+
+        Object.freeze(model);
+        model.name = "Another";
+        console.log('model ',model);
+        console.log('frozen ',Object.isFrozen(model));
+
+        console.log('Prototype ',Object.getPrototypeOf(model));
+
+        let uint8 = { 
+            [Symbol.hasInstance](x) {
+                return Number.isInteger(x) && x >= 0 && x <= 255; 
+            }
+        };
+        console.log('instanceof ',128 instanceof uint8);
+    </script>
+</html>
