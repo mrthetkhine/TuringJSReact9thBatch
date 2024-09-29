@@ -1,0 +1,27 @@
+
+<html>
+   
+    <script>
+        let obj = {
+            name: "Something",
+            age :40,
+        }
+        let proxy = new Proxy(obj,{
+            set(obj,prop,value)
+            {
+                if(typeof obj[prop] == typeof value)
+                {
+                    obj[prop] = value;
+                }
+                else
+                {
+                    console.warn('Expeced typed ',typeof obj[prop] , ' but found ', typeof value);
+                }
+                //console.log('Setter ',obj, ' Prop ',prop, ' Value ',value);
+            }
+        });
+        proxy.name = "Change";
+        proxy.name = 23;
+        console.log('Proxy.name ',proxy.name);
+    </script>
+</html>

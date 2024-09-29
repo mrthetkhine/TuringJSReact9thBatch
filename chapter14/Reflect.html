@@ -1,0 +1,42 @@
+
+<html>
+   
+    <script>
+        let obj = {
+            name : "TK",
+            display()
+            {
+                console.log('Display ',this.name);
+            }
+        }
+        Reflect.apply(obj.display,{
+            name:"Someone"
+        },[]);
+
+        class Human{
+            constructor()
+            {
+                console.log('Human');
+            }
+        }
+        let con = Human;
+        //new Human
+        let obj2 = Reflect.construct(Human,[]);
+        console.log('Obj2 ',obj2);
+        console.log('Get ',Reflect.get(obj,'name'));
+        console.log('Has ',Reflect.has(obj,'name'));
+        console.log('in ','name' in obj);
+
+        //console.log('isExtensible ',Reflect.isExtensible(false));
+        console.log('isExtensible ',Object.isExtensible(false));
+
+        let parent = {
+            x : 100
+        };
+        let child = {
+            y : 200
+        }
+        Reflect.setPrototypeOf(child,parent);
+        console.log('Child ',child.x);
+    </script>
+</html>

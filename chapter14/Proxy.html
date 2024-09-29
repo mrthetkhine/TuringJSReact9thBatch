@@ -1,0 +1,30 @@
+
+<html>
+   
+    <script>
+        let obj = {
+            name: "Something",
+            order()
+            {
+                console.log('order method');
+            },
+            invoice()
+            {
+                console.log('invoice method');
+            }
+        }
+        let proxy = new Proxy(obj,{
+            get(target, prop, receiver) {
+                //console.log('target ',target, ' prop ',prop, ' Receiver ',receiver);
+                if(typeof target[prop] ==='function')
+                {
+                    console.log('Method ',prop, ' was called');
+                }
+                return target[prop];
+            },
+        });
+        proxy.invoice();
+        proxy.order();
+        console.log('Obj.name ',obj.name);
+    </script>
+</html>

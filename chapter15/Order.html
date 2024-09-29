@@ -1,0 +1,21 @@
+
+<html>
+    <script defer src="lib1.js">
+      
+     </script>
+     <script async src="lib2.js">
+       
+     </script>
+    <script>
+        window.onerror = function(err)
+        {
+            console.log('Global error ',err);
+        }
+        var data = "Hello"
+        console.log('Script 1');
+        undefined.doSomething();
+    </script>
+    <script>
+       console.log('Script 2 ',data);
+    </script>
+</html>

@@ -1,0 +1,42 @@
+
+<html>
+    <body>
+        <button type="button" id="btnCreate">
+            Create
+        </button>
+        <div id="container">
+            Container
+        </div>
+    </body>
+    
+    <script>
+        function importScript(url)
+        {
+            return new Promise((resolve,reject)=>{
+                let scriptEle = document.createElement('script');
+                scriptEle.src=url;
+                scriptEle.onload = function()
+                {
+                    resolve();
+                }
+                document.head.append(scriptEle);
+            });
+            
+        }
+       document.getElementById('btnCreate')
+                .addEventListener('click',()=>{
+                    console.log('Created click');
+                    /*
+                    let element = document.createElement('h1');
+                    element.innerText = "Hello";
+                    document.getElementById('container')
+                            .append(element);
+                    */
+                   importScript('./lib1.js')
+                            .then(()=>{
+                                console.log('Can use API now');
+                            });
+                });
+    console.log('Window ',window);
+    </script>
+</html>

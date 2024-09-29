@@ -1,0 +1,30 @@
+
+<html>
+    <body>
+        <h1> H1</h1>
+    </body>
+    
+    <script>
+        window.onload = function()
+        {
+            console.log('Window loaded');
+        }
+        window.onload = function()
+        {
+            console.log('Window loaded2');
+        }
+        window.addEventListener('load',(event)=>{
+            console.log('onload handler 1');
+        })
+        window.addEventListener('load',(event)=>{
+            console.log('onload handler 1');
+        })
+        document.addEventListener('mousemove',(event)=>{
+            console.log('x ',event.clientX, ' y ',event.clientY);
+        })
+        document.addEventListener('mouseup',(event)=>{
+            console.log('mouse uup x ',event.clientX, ' y ',event.clientY);
+        })
+    </script>
+    
+</html>
