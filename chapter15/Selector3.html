@@ -1,0 +1,45 @@
+
+<html>
+    <style>
+        #container
+        {
+            height: 150px;
+            border: 1px solid green;
+        }
+        #childContainer
+        {
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+    <body>
+        <form>
+            <input type="text" value="textbox 1" name="txtName"/>
+            <br/>
+            <input type="text" value="textbox 2"/>
+            <br/>
+            <textarea value="textbox 3">
+            </textarea>
+            <br/>
+            <input type="button" value="Button label"></input>
+           
+            <br/>
+        </form>
+        <h1>first</h1>
+        <h1 class="my-container">second</h1>
+        <h2>H2</h2>
+        <button type="button" id="btnRemove">Remove</button>
+
+    </body>
+    <script>
+        
+        console.log('Textbox querySelectorAll ',document.querySelectorAll('input[type="text"]'));
+        console.log(' querySelectorAll h1:first-child',document.querySelectorAll('h1:first-child'));
+        console.log(' querySelectorAll h1,h2',document.querySelectorAll('h1,h2'));
+        console.log(' getElementsByName txtName',document.getElementsByName('txtName'));
+        console.log(' getElementsByTagName h1',document.getElementsByTagName('h1'));
+        console.log(' getElementsByClassName my-container',document.getElementsByClassName('my-container'));
+
+        console.log('Preselected ',document.forms);
+    </script>
+</html>

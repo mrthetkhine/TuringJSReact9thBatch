@@ -1,0 +1,46 @@
+
+<html>
+    <style>
+        #container
+        {
+            height: 150px;
+            border: 1px solid green;
+        }
+        #childContainer
+        {
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+    <body>
+        <div id="container">
+            container
+            <div id="childContainer">
+                childContainer
+            </div>
+        </div>
+    </body>
+    <script>
+        document.addEventListener('click',function (event){
+            console.log('Document click ',event, " ",event.target == this);
+        });
+        document.getElementById('childContainer')
+                .addEventListener('click',function (event){
+                    console.log('click child container ',event, " ",event.target == this);
+                    event.stopPropagation();
+                });
+        document.getElementById('container')
+                .addEventListener('click',function (event){
+                    console.log('click  container ',event, " ",event.target == this);
+                    event.stopImmediatePropagation();
+                });
+        document.getElementById('container')
+                .addEventListener('click',function (event){
+                    console.log('click  container handler 2 ',event);
+                });
+        document.getElementById('container')
+                .addEventListener('click',function (event){
+                    console.log('click  container handler 3 ',event);
+                });
+    </script>
+</html>

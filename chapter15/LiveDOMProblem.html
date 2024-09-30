@@ -1,0 +1,40 @@
+
+<html>
+    <style>
+        #container
+        {
+            height: 150px;
+            border: 1px solid green;
+        }
+        #childContainer
+        {
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+    <body>
+        <div id="container">
+            <h1>One</h1>
+        </div>
+        <button type="button" id="btnAdd">Add</button>
+    </body>
+    <script>
+        document.addEventListener('click',(event)=>{
+            console.log('Document click');
+        });
+        document.getElementById('btnAdd')
+                .addEventListener('click',(event)=>{
+                    //console.log('add h1');
+                    for(let i=0,len =document.getElementsByTagName('h1').length; i<len ;i++)
+                    {
+                        console.log('adding h1');
+                        let element = document.createElement('h1');
+                        element.innerText= "New h1";
+                        document.getElementById('container')
+                                .appendChild(element);
+                    }
+                });
+        //console.log(' getElementsByTagName h1',document.getElementsByTagName('h1'));
+        //console.log(' getElementsByClassName my-container',document.getElementsByClassName('my-container'));
+    </script>
+</html>

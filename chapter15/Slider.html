@@ -1,0 +1,33 @@
+
+<html>
+    <style>
+        #myImage
+        {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    
+    <body>
+        <img src="" id="myImage"/>
+       
+
+    </body>
+    <script>
+        
+        let images = ['https://moshimsmmk.nz/wp-content/uploads/2020/07/APPLE--600x601.jpeg',
+            'https://i5.walmartimages.com/seo/Fresh-Gala-Apple-Each_f46d4fa7-6108-4450-a610-cc95a1ca28c5_3.38c2c5b2f003a0aafa618f3b4dc3cbbd.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF',
+            'https://i5.walmartimages.com/seo/Fresh-Pink-Lady-Apple-Each_fb057123-7b14-45f0-8b95-0b7ba1aca744.5a3e368f1b6db1be85515a4e5015a780.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF',
+           
+        ];
+        let i=0;
+        setInterval(()=>{
+            let myImage = document.getElementById('myImage');
+            i ++;
+            //console.log(images[randomIndex]);
+            myImage.src = images[i % images.length];       
+        },1000);
+                    
+              
+    </script>
+</html>

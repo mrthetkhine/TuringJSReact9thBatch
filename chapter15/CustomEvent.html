@@ -1,0 +1,33 @@
+
+<html>
+    <style>
+        #container
+        {
+            height: 150px;
+            border: 1px solid green;
+        }
+        #childContainer
+        {
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+    <body>
+       
+    </body>
+    <script>
+        function doSomething()
+        {
+            setTimeout(()=>{
+                console.log('Do something done');
+                document.dispatchEvent(new CustomEvent("doSomethingDone", { detail: false }));
+            },3000);
+        }
+        document.addEventListener('doSomethingDone',(event)=>{
+            console.log('Custom event fired ',event);
+        });
+        doSomething();
+        
+        
+    </script>
+</html>

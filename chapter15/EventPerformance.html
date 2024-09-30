@@ -1,0 +1,40 @@
+
+<html>
+    <style>
+       </style>
+    <body>
+        <table id="myTable" border="1">
+            <thead>
+                <th>No</th>
+               
+            </thead>
+            <tbody id="container">
+                <tr>
+                    <td>1</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script>
+            for(let i=0;i< 10000;i++)
+            {
+                let container = document.getElementById('container');
+                let row = document.createElement('tr');
+                /*
+                row.addEventListener('click',(event)=>{
+                    console.log('click row ');
+                })*/
+                row.innerHTML = `<td> Data ${i}</td>`;
+                container.appendChild(row);
+            }
+            document.getElementById('container')
+                    .addEventListener('click',(event)=>{
+                        //console.log('Click');
+                        let row = event.target.closest("tr");
+                        console.log('Click ',row);
+                    });
+        
+        
+    </script>
+</html>

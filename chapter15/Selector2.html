@@ -1,0 +1,46 @@
+
+<html>
+    <style>
+        #container
+        {
+            height: 150px;
+            border: 1px solid green;
+        }
+        #childContainer
+        {
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+    <body>
+        <div id="container" class="my-container">
+            container
+            <div id="childContainer">
+                childContainer
+                <p>
+                    <h1> First h1 inside container</h1>
+                </p>
+                
+            </div>
+            <h1> H1 under container</h1>
+        </div>
+        <h1> Another</h1>
+        <div class="my-container">
+            Second container
+        </div>
+        <span class="my-container">
+            Span element
+        </span>
+        <span class="my-container"></span>
+            Span element 2
+        </span>
+        <button type="button" id="btnRemove">Remove</button>
+    </body>
+    <script>
+        
+        
+        console.log('querySelectorAll div ~ h1',document.querySelectorAll('div~h1'));
+        console.log('querySelectorAll div ~ span',document.querySelectorAll('div~span'));
+        console.log('querySelectorAll div + span',document.querySelectorAll('div+span'));
+    </script>
+</html>
