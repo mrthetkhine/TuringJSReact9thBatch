@@ -1,0 +1,40 @@
+
+<html>
+    <style>
+      
+     
+    </style>
+    
+    <body>
+        <template id="row">
+            <tr>
+                <td>1</td>
+                <td>One</td>
+            </tr>   
+        </template>
+       <table>
+            <thead>
+                <th>Id </th>
+                <th>Name </th>
+            </thead>
+            <tbody id="container">
+                <tr>
+                    <td>1</td>
+                    <td>One</td>
+                </tr>    
+            </tbody>    
+       </table>
+       <button type="button" id="btnAdd">Add</button>
+        
+    </body>
+    <script>
+        document.getElementById('btnAdd')
+                .addEventListener('click',(event)=>{
+                    console.log('append');
+                    let template = document.querySelector("#row");
+                    let tableBody = document.querySelector("tbody");
+                    let clone = template.content.cloneNode(true);
+                    tableBody.append(clone);
+                });
+    </script>
+</html>

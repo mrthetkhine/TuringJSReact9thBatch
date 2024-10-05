@@ -1,0 +1,63 @@
+
+<html>
+    <style>
+        .colored-container
+        {
+            background: gray;
+        }
+        .hightlight
+        {
+            color:green;
+            background: gray;
+        }
+        #container
+        {
+            width: 300px;
+            height: 200px;
+        }
+
+    </style>
+    
+    <body>
+        <ul id="lstItem">
+            <li data-section-no="1">Item 1</li>
+            <li data-section-no="2">Item 2</li>
+            <li data-section-no="3">Item 3</li>
+        </ul>
+        <div id="container">
+            container
+        </div>
+       
+        <button type="button" id="btnAddClass">Add</button>
+        <button type="button" id="btnRemoveClass">Remove</button>
+    </body>
+    <script>
+        document.getElementById('btnAddClass') 
+                .addEventListener('click',()=>{
+                    let container = document.getElementById('container');
+                    container.classList.add('colored-container');
+                });
+       
+        document.getElementById('btnRemoveClass') 
+            .addEventListener('click',()=>{
+                let container = document.getElementById('container');
+                container.classList.remove('colored-container');
+            });        
+        document.getElementById('lstItem')
+                .addEventListener('mouseover',(event)=>{
+                    console.log('mouse over ');
+                    event.target.closest('li').classList.add('hightlight');
+                })
+        document.getElementById('lstItem')
+                .addEventListener('mouseout',(event)=>{
+                    console.log('mouse out');
+                    event.target.closest('li').classList.remove('hightlight');
+                });
+        document.getElementById('lstItem')
+                .addEventListener('click',(event)=>{
+                    let item = event.target.closest('li');
+                    let data = item.dataset.sectionNo;
+                    console.log('Click on data ',data);
+                });
+    </script>
+</html>

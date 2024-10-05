@@ -1,0 +1,46 @@
+
+<html>
+    <style>
+      
+        #container
+        {
+            width: 300px;
+            height: 200px;
+            background: gray;
+            color:red;
+          
+        }
+        .center-container{
+            height:100vh;
+            background: lightblue;
+        }
+    </style>
+    <body>
+        <button type="button" id="btnGo">Go</button>
+        <a href="#container-1">
+            container 1
+        </a>
+        <a href="#container-2">
+            container 2
+        </a>
+        <div id ='container-1' class="center-container">
+        Central container
+        </div>
+
+        <div id='container-2' class="center-container">
+            Central container2
+        </div>
+      
+        
+    </body>
+    <script>
+        console.log('location ',window.location);
+        let url = new URL(window.location);
+        console.log('url ',url);
+        document.getElementById('btnGo')
+                .addEventListener('click',(event)=>{
+                    //window.location = "https://www.google.com"
+                    location.hash='container-2'
+                });
+    </script>
+</html>

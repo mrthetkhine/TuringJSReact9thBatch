@@ -1,0 +1,48 @@
+
+<html>
+    <style>
+        .colored-container
+        {
+            background: gray;
+        }
+        .hightlight
+        {
+            color:green;
+            background: gray;
+        }
+        #container
+        {
+            width: 300px;
+            height: 200px;
+        }
+
+    </style>
+    
+    <body>
+       
+        <div id="container">
+            container
+        </div>
+       
+        <button type="button" id="btnAdd">Add</button>
+        <button type="button" id="btnDelete">Delete</button>
+        
+    </body>
+    <script>
+        let container = document.getElementById('container');
+        document.getElementById('btnAdd')
+                .addEventListener('click',(event)=>{
+                    console.log('btnAdd event');
+                    let h1 = document.createElement('h1');
+                    h1.textContent = "This is h1 by JS";
+                    //container.append(h1);
+                    //container.prepend(h1);
+                    //container.after(h1);
+                    container.before(h1);
+                });
+        document.getElementById('btnDelete')
+                .addEventListener('click',(event)=>{
+                    container.remove();
+                });
+    </script>
+</html>

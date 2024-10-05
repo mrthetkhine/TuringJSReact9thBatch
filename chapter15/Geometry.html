@@ -1,0 +1,76 @@
+
+<html>
+    <style>
+      
+        #container
+        {
+            width: 300px;
+            height: 200px;
+            background: gray;
+            color:red;
+          
+        }
+        #center-container{
+            height:100vh;
+            background: lightblue;
+        }
+    </style>
+    
+    <body>
+       <button type="button" id="btnToBottom"> To bottom</button>
+        <div id="container" 
+            class="container">
+            container
+        </div>
+       <h1>
+            This is h1
+       </h1>
+       <div id="center-container">
+        Central container
+       </div>
+       <div id="center-container">
+        Central container2
+       </div>
+        <button type="button" id="btnAnimate">Animate</button>
+       
+        
+    </body>
+    <script>
+        document.addEventListener('click',(event)=>{
+            console.log('x ',event.clientX, ' y ',event.clientY);
+            let ele = document.elementFromPoint(event.clientX,event.clientY);
+            console.log('Ele ',ele);
+            let rect = ele.getBoundingClientRect();
+            console.log('Rect ',rect);
+        });
+        document.getElementById('btnToBottom')
+                .addEventListener('click',(event)=>{
+                    let documentHeight = document.documentElement.offsetHeight; 
+                    let viewportHeight = window.innerHeight;
+                    // And scroll so the last "page" shows in the viewport 
+                    window.scrollTo({
+                        left:0, 
+                        top:documentHeight - viewportHeight,
+                        behavior:'smooth'
+                    });
+                    let counter = 0;
+                    let y = 0;
+                    /*
+                    handler = setInterval(()=>{
+                        counter ++;
+                        if(counter == 20)
+                        {   
+                            clearInterval(handler);
+                           
+                        }
+                        else
+                        {
+                            y+=40;
+                            window.scrollTo(0, y);
+                        }
+                    },100);
+                    */
+                    
+                });
+    </script>
+</html>

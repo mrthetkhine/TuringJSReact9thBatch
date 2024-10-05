@@ -1,0 +1,43 @@
+
+<html>
+    <style>
+        .transparent { opacity: 0; }
+        
+        .animate
+        {
+            color:green;
+            background: gray;
+            opacity: 1 !important;
+            transition: opacity .5s ease-in 
+        }
+        #container
+        {
+            width: 300px;
+            height: 200px;
+            background: gray;
+            color:red;
+            opacity: 0;
+        }
+
+    </style>
+    
+    <body>
+       
+        <div id="container" 
+            class="container">
+            container
+        </div>
+       
+        <button type="button" id="btnAnimate">Animate</button>
+       
+        
+    </body>
+    <script>
+        document.getElementById('btnAnimate')
+                .addEventListener('click',(event)=>{
+                    console.log('animated');
+                    let container = document.getElementById('container');
+                    container.classList.add('animate');
+                }); 
+    </script>
+</html>

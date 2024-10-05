@@ -1,0 +1,52 @@
+
+<html>
+    <style>
+        .colored-container
+        {
+            background: gray;
+        }
+        .hightlight
+        {
+            color:green;
+            background: gray;
+        }
+        #container
+        {
+            width: 300px;
+            height: 200px;
+        }
+
+    </style>
+    
+    <body>
+       
+        <div id="container">
+            container
+        </div>
+       
+        <button type="button" id="btnUpdate">Update</button>
+        <button type="button" id="btnInsert">Insert</button>
+        
+    </body>
+    <script>
+        document.getElementById('btnUpdate')
+                .addEventListener('click',(event)=>{
+                    console.log('update event');
+                    let container = document.getElementById('container');
+                   
+                    //container.innerText = "<h1>Update by JS</h1>";
+                    //container.innerHTML = "<h1>Update by JS</h1>";
+                    //container.outerText = "Update";
+                    container.outerHTML = "<span id='container'> Update</span>";
+                });
+        document.getElementById('btnInsert')
+                .addEventListener('click',(event)=>{
+                    console.log('btnInsert click');
+                    let container = document.getElementById('container');
+                    //container.insertAdjacentHTML('beforebegin','<h1> Added</h1>');
+                    //container.insertAdjacentHTML('afterbegin','<h1> After begin</h1>');
+                    //container.insertAdjacentHTML('beforeend','<h1> Added</h1>');
+                    container.insertAdjacentHTML('afterend','<h1> Added</h1>');
+                });           
+    </script>
+</html>

@@ -1,0 +1,52 @@
+
+<html>
+    <style>
+        .colored-container
+        {
+            background: gray;
+            color:red;
+        }
+        .hightlight
+        {
+            color:green;
+            background: gray;
+        }
+        #container
+        {
+            width: 300px;
+            height: 200px;
+        }
+
+    </style>
+    
+    <body>
+       
+        <div id="container" 
+            class="colored-container"
+            style="color:green;">
+            container
+        </div>
+       
+        <button type="button" id="btnUpdate">update</button>
+        <button type="button" id="btnGetStyle">GetStyle</button>
+        
+    </body>
+    <script>
+        let container = document.getElementById('container');
+        document.getElementById('btnUpdate')
+                .addEventListener('click',(event)=>{
+                    console.log('btn update');
+                    //container.style.color='blue';
+                    //container.style.width='100px';
+
+                    let styles = 'color:blue;width:100px;'
+                    container.style.cssText = styles;
+                });
+        document.getElementById('btnGetStyle')
+                .addEventListener('click',(event)=>{
+                    let title = document.querySelector("#container");
+                    let styles = window.getComputedStyle(title);
+                    console.log('Styles ',styles);
+                });
+    </script>
+</html>
