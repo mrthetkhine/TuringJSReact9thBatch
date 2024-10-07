@@ -1,0 +1,26 @@
+
+<html>
+    <button type="button" id="btnLogout">Logout</button>
+    <script>
+        let obj = localStorage.obj;
+        if(!obj)
+        {
+            obj = {
+            name : "TK",
+            age : 40
+            }
+            localStorage.obj = JSON.stringify(obj);
+        }
+        else
+        {
+            obj = JSON.parse(obj);
+            console.log('Obj ',obj);
+        }
+        document.getElementById('btnLogout')
+                .addEventListener('click',(event)=>{
+                    localStorage.logout = "logout";
+                });
+        
+        
+    </script>
+</html>

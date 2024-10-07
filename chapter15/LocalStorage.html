@@ -1,0 +1,27 @@
+
+<html>
+    
+    <script>
+        let obj = {
+            name : "TK",
+            age : 40
+        }
+        //localStorage.obj = obj;
+        let username = localStorage.username;
+        if(!username)
+        {
+            username = prompt("Enter user name");
+            localStorage.username = username;
+            localStorage.age = 20;
+        }
+        else
+        {
+            console.log('Data is ',username);
+            let age = localStorage.age;
+            console.log('age is ',typeof age);
+        }
+        window.addEventListener('storage',(event)=>{
+            console.log('Event ',event);
+        })
+    </script>
+</html>

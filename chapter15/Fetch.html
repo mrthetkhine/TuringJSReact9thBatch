@@ -1,0 +1,26 @@
+
+<html>
+    <style>
+      
+        #container
+        {
+            width: 300px;
+            height: 200px;
+            background: gray;
+            color:red;
+          
+        }
+        .center-container{
+            height:100vh;
+            background: lightblue;
+        }
+    </style>
+    <body>
+        
+    </body>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json))
+    </script>
+</html>

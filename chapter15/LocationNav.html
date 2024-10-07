@@ -31,7 +31,7 @@
             Central container2
         </div>
       
-        
+        <button type="button" id="btnBack">Back</button>
     </body>
     <script>
         console.log('location ',window.location);
@@ -41,6 +41,10 @@
                 .addEventListener('click',(event)=>{
                     //window.location = "https://www.google.com"
                     location.hash='container-2'
+                });
+        document.getElementById('btnBack')
+                .addEventListener('click',()=>{
+                    history.go(-1);
                 });
     </script>
 </html>

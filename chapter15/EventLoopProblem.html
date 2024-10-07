@@ -1,0 +1,16 @@
+
+<html>
+    <button type="button" id="btnLogout">Logout</button>
+    <script>
+        document.addEventListener('click',(event)=>{
+            console.log('Doc click');
+        });
+        function delay(miliseconds)
+        {
+            let start = new Date();
+            while( (end=new Date())-start <miliseconds );
+        }
+        delay(3000);
+        console.log('Fire after 3 seconds');
+    </script>
+</html>
