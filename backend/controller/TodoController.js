@@ -33,16 +33,64 @@ async function getAllTodos(req,res,next){
 async function getTodoById(req,res,next){
     let id = req.params.id;
     console.log(id);
-    let todo = todos.find(todo=>todo.id==id);
-    res.json(todo);
+    try
+    {
+        let todo = await todoService.getTodoById(id);
+        res.json(todo);
+    }
+    catch (err)
+    {
+        res.status(404).json({
+            errorMessage : "Id "+id+" not found"
+        })
+    }
 }
 async function saveTodo(req,res,next){
     console.log("Post todo ",req.body);
-    res.status(201).json(req.body);
+    try
+    {
+        let todo = await todoService.saveTodo(req.body);
+        res.status(201).json(todo);
+    }
+    catch(err)
+    {
+        res.status(400).json({
+            errorMessage : err.message
+        });
+    }
+
 }
 async function updateTodo(req,res,next){
     console.log('update Todo id ',req.params.id);
-    res.status(200).json(req.body);
+    try
+    {
+        let id = req.params.id;
+        let updatedTodo = await todoService.updateTodoById(id,req.body);
+        res.status(200).json(updatedTodo);
+    }
+    catch(err)
+    {
+        //console.log(err);
+        res.status(400).json({
+            errorMessage : err.toString()
+        });
+    }
+
+}
+async function deleteTodoById(req,res,next)
+{
+    let id = req.params.id;
+    try
+    {
+        let deletedTodo = await todoService.deleteTodoById(id);
+        res.json(deletedTodo);
+    }
+    catch(err)
+    {
+        res.status(400).json({
+            errorMessage : err.toString()
+        });
+    }
 }
 
 module.exports = {
@@ -50,4 +98,5 @@ module.exports = {
     getTodoById,
     saveTodo,
     updateTodo,
+    deleteTodoById,
 };
