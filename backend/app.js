@@ -5,7 +5,7 @@ const cors = require("cors");
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var customLogger = require('./middleware/customLogger');
-
+const auth = require('./middleware/auth');
 
 const mongoose = require('mongoose');
 const { db } = require('./config/database');
@@ -35,9 +35,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 app.use('/api/todos', todosRouter);
-app.use('/api/movies',movieRouter);
+app.use('/api/movies',auth.verifyUserToken,movieRouter);
 app.use('/api/reviews', reviewRouter);
 app.use('/api/dummy', dummyRouter);
 
