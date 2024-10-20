@@ -3,6 +3,7 @@ const movieService = require('../services/MovieService');
 async function getAllMovies(req, res) {
     try
     {
+        console.log("Login user ",req.user);
         let movies = await movieService.getAllMovies();
         res.status(200).json(movies);
     }

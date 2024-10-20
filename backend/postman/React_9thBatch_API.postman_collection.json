@@ -23,16 +23,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userName\": \"admin\",\n    \"password\":\"admin\"\n}"
+							"raw": "{\n    \"username\": \"user1\",\n    \"password\":\"user1\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/api/users",
+							"raw": "{{url}}/api/users/register",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"users"
+								"users",
+								"register"
 							]
 						}
 					},
@@ -51,14 +52,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userName\": \"admin\",\n    \"password\":\"admin\"\n}"
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\":\"admin\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/users/login",
+							"raw": "{{url}}/api/users/login",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api",
 								"users",
 								"login"
 							]
@@ -330,6 +332,9 @@
 				},
 				{
 					"name": "GetMovies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -340,6 +345,15 @@
 								"disabled": true
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{url}}/api/movies",
 							"host": [
@@ -642,7 +656,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/api/movies/year/2025",
+							"raw": "{{url}}/api/movies/year/2010",
 							"host": [
 								"{{url}}"
 							],
@@ -650,7 +664,7 @@
 								"api",
 								"movies",
 								"year",
-								"2025"
+								"2010"
 							]
 						}
 					},
@@ -724,7 +738,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"movie\":\"670d25c8d6a1d755eb49d8a6\",\n    \"rating\":3,\n    \"review\":\"second for avatar 1\"\n}"
+							"raw": "{\n    \"movie\":\"670d25c8d6a1d755eb49d8a6\",\n    \"rating\":5,\n    \"review\":\"third review for avatar 1\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/api/reviews",
