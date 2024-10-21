@@ -1,0 +1,10 @@
+.profile .profile-image
+{
+    border-radius: 50%;
+
+}
+.profile .profile-name
+{
+    text-align: center;
+    font-weight: bold;
+}
