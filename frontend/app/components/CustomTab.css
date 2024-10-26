@@ -1,0 +1,16 @@
+.custom-tab-header {
+    padding-left:50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+.custom-tab-body
+{
+    margin-top: 25px;
+    min-height: 400px;
+    border: 1px solid lightgray;
+}

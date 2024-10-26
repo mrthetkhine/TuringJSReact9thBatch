@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import HelloWorld, {Child} from "@/app/components/HelloWorld";
@@ -12,6 +13,15 @@ import User from "@/app/components/conditional-rendering/User";
 import JsxInput from "@/app/components/JsxInput";
 import ListDemo from "@/app/components/ListDemo";
 import EventDemo from "@/app/components/EventDemo";
+import CustomButton from "@/app/components/CustomButton";
+import AnotherPage from "@/app/components/AnotherPage";
+import Counter from "@/app/components/Counter";
+import ImmutableState from "@/app/components/ImmutableState";
+import BatchUpdate from "@/app/components/BatchUpdate";
+import ListUpdate from "@/app/components/ListUpdate";
+import MovingDot from "@/app/components/MovingDot";
+import DeepObjectState from "@/app/components/DeepObjectState";
+import CustomTab from "@/app/components/CustomTab";
 
 export default function Home() {
     let profile1 = {
@@ -70,7 +80,21 @@ export default function Home() {
            {/* <JsxInput element={<User admin/> }/>*/}
 
             {/*<ListDemo todos={items}/>*/}
-            <EventDemo/>
+            {/*<EventDemo/>*/}
+            {/*<AnotherPage/>*/}
+           {/* <Counter/>
+            <Counter/>
+            <Counter/>*/}
+           {/* <ImmutableState/>*/}
+            {/*<BatchUpdate/>*/}
+          {/*  <ListUpdate/>*/}
+            {/*<MovingDot/>*/}
+           {/* <DeepObjectState/>*/}
+            <CustomTab headers={["Tab1", "Tab2", "Tab3"]}>
+                <div>Page 1</div>
+                <div>Page 2</div>
+                <div>Page 3</div>
+            </CustomTab>
         </main>
 
     </div>
