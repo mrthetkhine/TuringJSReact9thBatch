@@ -1,5 +1,20 @@
 import {useState} from "react";
 import './CustomTab.css';
+import classNames from 'classnames';
+function TabHeader({onClick,header,activeTab}) {
+
+    const tabHeaderClass = classNames({
+        'custom-tab-header': true,
+        'active': activeTab,
+    });
+
+    return <span
+        onClick={onClick}
+        className={tabHeaderClass}>
+                {header}
+    </span>;
+}
+
 export default function CustomTab({headers,children}) {
     console.log('Header ',headers);
 
@@ -10,12 +25,11 @@ export default function CustomTab({headers,children}) {
     }
     return (<div>
         {
-            headers.map((header,index)=><span
-                onClick={()=>tabHeaderClick(index)}
+            headers.map((header,index)=><TabHeader
                 key={index}
-                className={'custom-tab-header'}>
-                {header}
-            </span>)
+                activeTab={activeTab== index}
+                onClick={() => tabHeaderClick(index)}
+                header={header}/>)
         }
         <div className={'custom-tab-body'}>
             {children[activeTab]}

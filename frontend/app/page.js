@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import 'bootstrap/dist/css/bootstrap.css';
 import HelloWorld, {Child} from "@/app/components/HelloWorld";
 import SimpleJsx from "@/app/components/SimpleJsx";
 import Greeting from "@/app/components/Greeting";
 import Profile from "@/app/components/Profile";
 import ContainerDemo from "@/app/components/ContainerDemo";
 import CustomDiv from "@/app/components/CustomDiv";
-import {red} from "next/dist/lib/picocolors";
+import {bold, red} from "next/dist/lib/picocolors";
 import {Border} from "@/app/components/Border";
 import User from "@/app/components/conditional-rendering/User";
 import JsxInput from "@/app/components/JsxInput";
@@ -22,6 +23,9 @@ import ListUpdate from "@/app/components/ListUpdate";
 import MovingDot from "@/app/components/MovingDot";
 import DeepObjectState from "@/app/components/DeepObjectState";
 import CustomTab from "@/app/components/CustomTab";
+import FormDemo from "@/app/components/form/FormDemo";
+import FormDemoTwo from "@/app/components/form/FormDemoTwo";
+import TodoContainer from "@/app/components/todos/TodoContainer";
 
 export default function Home() {
     let profile1 = {
@@ -87,14 +91,19 @@ export default function Home() {
             <Counter/>*/}
            {/* <ImmutableState/>*/}
             {/*<BatchUpdate/>*/}
-          {/*  <ListUpdate/>*/}
+            {/*<ListUpdate/>*/}
             {/*<MovingDot/>*/}
            {/* <DeepObjectState/>*/}
-            <CustomTab headers={["Tab1", "Tab2", "Tab3"]}>
-                <div>Page 1</div>
+           {/* <CustomTab headers={["Tab1", "Tab2", "Tab3"]}>
+                <div style={{
+                    color:'red'
+                }}>Page 1</div>
                 <div>Page 2</div>
                 <div>Page 3</div>
-            </CustomTab>
+            </CustomTab>*/}
+           {/* <FormDemo/>*/}
+           {/* <FormDemoTwo/>*/}
+            <TodoContainer/>
         </main>
 
     </div>

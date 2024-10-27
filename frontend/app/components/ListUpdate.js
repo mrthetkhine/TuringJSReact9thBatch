@@ -41,11 +41,12 @@ export default function ListUpdate(props) {
         {
             todos.map((item,index)=> <div key={item.id}>
                 {item.title}
-                <button onClick={() => updateHandler(item)}>Update</button>
+                <button className={"btn btn-primary"} onClick={() => updateHandler(item)}>Update</button>
                 &nbsp;
-                <button onClick={() => deleteHandler(item)}>Delete</button>
+                <button className={"btn btn-primary"} onClick={() => deleteHandler(item)}>Delete</button>
             </div>)
         }
-        <button type={"button"} onClick={addHandler}>Add</button>
+        <button type={"button"}
+                className={"btn btn-primary"} onClick={addHandler}>Add</button>
     </div>);
 }
