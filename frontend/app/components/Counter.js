@@ -15,13 +15,14 @@ export default function Counter()
     }
     return (<div>
 
-        <button onClick={incHandler}>
+        <button onClick={incHandler} className={"btn btn-primary"}>
           &nbsp;  + &nbsp;
         </button>
         Counter {counter}
-        <button onClick={decHandler}>
+        <button onClick={decHandler} className={"btn btn-primary"}>
             &nbsp;  - &nbsp;
         </button>
-        <button onClick={()=>setAnotherCount(anotherCounter+1)}> Change </button>
+        <button className={"btn btn-primary"}
+            onClick={()=>setAnotherCount(anotherCounter+1)}> Change </button>
     </div>)
 }

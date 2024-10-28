@@ -26,6 +26,7 @@ import CustomTab from "@/app/components/CustomTab";
 import FormDemo from "@/app/components/form/FormDemo";
 import FormDemoTwo from "@/app/components/form/FormDemoTwo";
 import TodoContainer from "@/app/components/todos/TodoContainer";
+import ProductList from "@/app/components/productlist/ProductList";
 
 export default function Home() {
     let profile1 = {
@@ -86,9 +87,9 @@ export default function Home() {
             {/*<ListDemo todos={items}/>*/}
             {/*<EventDemo/>*/}
             {/*<AnotherPage/>*/}
-           {/* <Counter/>
             <Counter/>
-            <Counter/>*/}
+            <Counter/>
+            <Counter/>
            {/* <ImmutableState/>*/}
             {/*<BatchUpdate/>*/}
             {/*<ListUpdate/>*/}
@@ -103,7 +104,8 @@ export default function Home() {
             </CustomTab>*/}
            {/* <FormDemo/>*/}
            {/* <FormDemoTwo/>*/}
-            <TodoContainer/>
+           {/* <TodoContainer/>*/}
+           {/* <ProductList/>*/}
         </main>
 
     </div>
