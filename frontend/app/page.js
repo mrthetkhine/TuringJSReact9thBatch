@@ -27,6 +27,17 @@ import FormDemo from "@/app/components/form/FormDemo";
 import FormDemoTwo from "@/app/components/form/FormDemoTwo";
 import TodoContainer from "@/app/components/todos/TodoContainer";
 import ProductList from "@/app/components/productlist/ProductList";
+import DifferentPosition from "./components/reconciliation/DifferentPosition";
+import SamePosition from "./components/reconciliation/SamePosition";
+import DifferentComponent from "./components/reconciliation/DifferentComponent";
+import DifferentPositionReset from "./components/reconciliation/DifferentPositionReset";
+import DifferentKey from "./components/reconciliation/DifferentKey";
+import KeyWithIndexProblem from "./components/reconciliation/KeyWithIndexProblem";
+import KeyWithId from "./components/reconciliation/KeyWithId";
+import CounterWithReducer from "./components/reducer/CounterWithReducer";
+import TodoWithReducer from "./components/reducer/TodoWithReducer";
+import WhyContext from "./components/context/WhyContext";
+import ThemeComponent from "./components/context/ThemeComponent";
 
 export default function Home() {
     let profile1 = {
@@ -87,9 +98,9 @@ export default function Home() {
             {/*<ListDemo todos={items}/>*/}
             {/*<EventDemo/>*/}
             {/*<AnotherPage/>*/}
+           {/* <Counter/>
             <Counter/>
-            <Counter/>
-            <Counter/>
+            <Counter/>*/}
            {/* <ImmutableState/>*/}
             {/*<BatchUpdate/>*/}
             {/*<ListUpdate/>*/}
@@ -106,6 +117,17 @@ export default function Home() {
            {/* <FormDemoTwo/>*/}
            {/* <TodoContainer/>*/}
            {/* <ProductList/>*/}
+            {/*<DifferentPosition/>*/}
+           {/* <SamePosition/>*/}
+           {/* <DifferentComponent/>*/}
+           {/* <DifferentPositionReset/>*/}
+           {/* <DifferentKey/>*/}
+           {/* <KeyWithIndexProblem/>*/}
+            {/*<KeyWithId/>*/}
+           {/* <CounterWithReducer/>*/}
+           {/* <TodoWithReducer/>*/}
+           {/* <WhyContext/>*/}
+            <ThemeComponent/>
         </main>
 
     </div>

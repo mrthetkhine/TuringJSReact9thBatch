@@ -22,7 +22,7 @@ export default function Counter()
         <button onClick={decHandler} className={"btn btn-primary"}>
             &nbsp;  - &nbsp;
         </button>
-        <button className={"btn btn-primary"}
-            onClick={()=>setAnotherCount(anotherCounter+1)}> Change </button>
+       {/* <button className={"btn btn-primary"}
+            onClick={()=>setAnotherCount(anotherCounter+1)}> Change </button>*/}
     </div>)
 }

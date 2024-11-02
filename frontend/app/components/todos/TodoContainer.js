@@ -2,7 +2,7 @@ import {useState} from "react";
 import * as PropTypes from "prop-types";
 
 
-function TodoInput({addTodo})
+export function TodoInput({addTodo})
 {
     const [newTodo,setNewTodo] = useState('');
 
@@ -34,7 +34,7 @@ function TodoInput({addTodo})
     </div>);
 }
 
-function TodoItem({todo,onDelete,onUpdate}) {
+export function TodoItem({todo,onDelete,onUpdate}) {
     const [editMode,setEditMode] = useState(false);
     const [todoText,setTodoText] = useState(todo.title||'');
     const onChangeHandler = (event)=>{
@@ -73,7 +73,7 @@ function TodoItem({todo,onDelete,onUpdate}) {
 }
 
 
-function TodoList({todos,onDelete,onUpdate}) {
+export function TodoList({todos,onDelete,onUpdate}) {
     return (<div>
         {
             todos.map(todo => <TodoItem key={todo.id}
