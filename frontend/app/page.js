@@ -38,6 +38,14 @@ import CounterWithReducer from "./components/reducer/CounterWithReducer";
 import TodoWithReducer from "./components/reducer/TodoWithReducer";
 import WhyContext from "./components/context/WhyContext";
 import ThemeComponent from "./components/context/ThemeComponent";
+import TodoWithContext from "./components/context/TodoWithContext";
+import RefProblem from "./components/ref/RefProblem";
+import FocusInput from "./components/ref/FocusInput";
+import ReactProblem from "./components/ref/ReactProblem";
+import DatePicker from "./components/ref/DatePicker";
+import VideoPlayerEffectDemo from "./components/effect/EffectDemo";
+import EffectDemo from "./components/effect/EffectDemo";
+import EffectExactOnce from "./components/effect/EffectExactOnce";
 
 export default function Home() {
     let profile1 = {
@@ -127,7 +135,15 @@ export default function Home() {
            {/* <CounterWithReducer/>*/}
            {/* <TodoWithReducer/>*/}
            {/* <WhyContext/>*/}
-            <ThemeComponent/>
+          {/*  <ThemeComponent/>*/}
+           {/* <TodoWithContext/>*/}
+            {/*<RefProblem/>*/}
+           {/* <FocusInput/>*/}
+          {/*  <ReactProblem/>*/}
+          {/*  <DatePicker/>*/}
+           {/* <VideoPlayerEffectDemo/>*/}
+           {/* <EffectDemo/>*/}
+            <EffectExactOnce/>
         </main>
 
     </div>

@@ -1,18 +1,13 @@
-import {useReducer, useState} from "react";
+import {useContext, useReducer, useState} from "react";
 import {TodoInput, TodoList} from "../todos/TodoContainer";
 import todoReducer from "./todoReducer";
+import {TodoListContext,TodoDispatchContext} from "../context/TodoContext";
 
-const initState = [{
-        id : 1,
-        title : 'Task 1'
-    },
-    {
-        id : 2,
-        title : 'Task 2'
-    }];
 export default function TodoWithReducer()
 {
-    const [todos,dispatch] = useReducer(todoReducer,initState);
+
+    const todos = useContext(TodoListContext);
+    const dispatch = useContext(TodoDispatchContext);
     const addNewTodo= (todo)=>{
         console.log('Add New Todo ',todo);
         const payload = {
