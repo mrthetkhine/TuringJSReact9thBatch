@@ -1,12 +1,13 @@
 import counterReducer from "./counterReducer";
 import {useReducer} from "react";
+import useCustomReducer from "./useCustomReducer";
 
 const initState= {
     count :0
 }
 export default function CounterWithReducer() {
-    const [state, dispatch] = useReducer(counterReducer, initState);
-
+    //const [state, dispatch] = useReducer(counterReducer, initState);
+    const [state, dispatch] = useCustomReducer(counterReducer, initState);
     const incHandler= ()=>{
       dispatch({
           type:"INC"

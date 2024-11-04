@@ -46,6 +46,16 @@ import DatePicker from "./components/ref/DatePicker";
 import VideoPlayerEffectDemo from "./components/effect/EffectDemo";
 import EffectDemo from "./components/effect/EffectDemo";
 import EffectExactOnce from "./components/effect/EffectExactOnce";
+import EffectCycle from "./components/effect/EffectCycle";
+import EffectCleanUp from "./components/effect/EffectCleanUp";
+import CleanUpDemo from "./components/effect/CleanUpDemo";
+import TodoFetch from "./components/effect/TodoFetch";
+import ClassComponentDemo from "./components/ClassComponentDemo";
+import HookDemo from "./components/hook/HookDemo";
+import LoadUser from "./components/hook/LoadUser";
+import CustomHookDemo from "./components/hook/CustomHookDemo";
+import FormikSimpleExample from "./components/form/FormikSimpleExample";
+import FormWithValidation from "./components/form/FormWithValidation";
 
 export default function Home() {
     let profile1 = {
@@ -136,14 +146,26 @@ export default function Home() {
            {/* <TodoWithReducer/>*/}
            {/* <WhyContext/>*/}
           {/*  <ThemeComponent/>*/}
-           {/* <TodoWithContext/>*/}
+
             {/*<RefProblem/>*/}
            {/* <FocusInput/>*/}
           {/*  <ReactProblem/>*/}
           {/*  <DatePicker/>*/}
            {/* <VideoPlayerEffectDemo/>*/}
            {/* <EffectDemo/>*/}
-            <EffectExactOnce/>
+          {/*  <EffectExactOnce/>*/}
+          {/*  <EffectCycle/>*/}
+           {/* <EffectCleanUp/>*/}
+           {/* <CleanUpDemo/>*/}
+            {/*<TodoFetch/>*/}
+           {/* <ClassComponentDemo/>*/}
+           {/* <HookDemo/>*/}
+           {/* <LoadUser/>*/}
+           {/* <CustomHookDemo/>*/}
+           {/* <CounterWithReducer/>
+             <TodoWithContext/>*/}
+          {/*  <FormikSimpleExample/>*/}
+            <FormWithValidation/>
         </main>
 
     </div>

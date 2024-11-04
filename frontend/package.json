@@ -11,12 +11,14 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
+    "formik": "^2.4.6",
     "immer": "^10.1.1",
+    "jquery": "^3.6.3",
+    "jquery-datepicker": "^1.12.3",
     "next": "14.2.15",
     "react": "^18",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18",
-    "jquery": "^3.6.3",
-    "jquery-datepicker": "^1.12.3"
+    "yup": "^1.4.0"
   }
 }
