@@ -56,6 +56,17 @@ import LoadUser from "./components/hook/LoadUser";
 import CustomHookDemo from "./components/hook/CustomHookDemo";
 import FormikSimpleExample from "./components/form/FormikSimpleExample";
 import FormWithValidation from "./components/form/FormWithValidation";
+import FormikBasicExample from "./components/form/FormikBasicExample";
+import RenderPropertyProblem from "./components/design-pattern/RenderPropertyProblem";
+import RenderProperty from "./components/design-pattern/RenderProperty";
+import CustomFormik from "./components/form/CustomFormik";
+import React from "react";
+import CustomFormikDemo from "./components/form/CustomFormikDemo";
+import ErrorBoundary from "./components/error/ErrorBoundary";
+import Table from "./components/fragement/Table";
+import PortalDemo from "./components/PortalDemo";
+import CallBackProblem from "./components/callback/CallBackProblem";
+import UseMemoDemo from "./components/UseMemoDemo";
 
 export default function Home() {
     let profile1 = {
@@ -165,7 +176,25 @@ export default function Home() {
            {/* <CounterWithReducer/>
              <TodoWithContext/>*/}
           {/*  <FormikSimpleExample/>*/}
-            <FormWithValidation/>
+           {/* <FormWithValidation/>*/}
+           {/* <FormikBasicExample/>*/}
+          {/*  <RenderPropertyProblem/>*/}
+            {/*<RenderProperty >
+                {(position)=>{
+                    return <div>
+                        <div> Position x {position.x}</div>
+                        <div> Position y {position.y}</div>
+                    </div>
+                }}
+            </RenderProperty>*/}
+            {/*<CustomFormikDemo/>*/}
+            {/*<ErrorBoundary fallback={<p>Something went wrong</p>}>
+                <Greeting message={123}/>
+            </ErrorBoundary>*/}
+           {/* <Table/>*/}
+            {/*<PortalDemo/>*/}
+           {/* <CallBackProblem/>*/}
+            <UseMemoDemo/>
         </main>
 
     </div>

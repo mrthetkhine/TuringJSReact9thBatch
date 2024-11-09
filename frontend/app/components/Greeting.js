@@ -1,4 +1,6 @@
-export default function Greeting(props) {
+import PropTypes from "prop-types";
+
+export default function Greeting({message='Hello'}) {
 
     let styles = {
         color:'red',
@@ -10,9 +12,12 @@ export default function Greeting(props) {
     }
     return (<div >
         <div style={styles}>
-            Greeting {props.message.toUpperCase()}
+            This one Greeting {message.toUpperCase()}
         </div>
 
         User {user.name}
     </div>);
 }
+Greeting.propTypes = {
+    message: PropTypes.string
+};
