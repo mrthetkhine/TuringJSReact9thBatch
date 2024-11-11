@@ -49,11 +49,11 @@ import EffectExactOnce from "./components/effect/EffectExactOnce";
 import EffectCycle from "./components/effect/EffectCycle";
 import EffectCleanUp from "./components/effect/EffectCleanUp";
 import CleanUpDemo from "./components/effect/CleanUpDemo";
-import TodoFetch from "./components/effect/TodoFetch";
+import TodoFetch from "./components/hook/TodoFetch";
 import ClassComponentDemo from "./components/ClassComponentDemo";
 import HookDemo from "./components/hook/HookDemo";
 import LoadUser from "./components/hook/LoadUser";
-import CustomHookDemo from "./components/hook/CustomHookDemo";
+import FetchUser from "./components/hook/FetchUser";
 import FormikSimpleExample from "./components/form/FormikSimpleExample";
 import FormWithValidation from "./components/form/FormWithValidation";
 import FormikBasicExample from "./components/form/FormikBasicExample";
@@ -67,6 +67,11 @@ import Table from "./components/fragement/Table";
 import PortalDemo from "./components/PortalDemo";
 import CallBackProblem from "./components/callback/CallBackProblem";
 import UseMemoDemo from "./components/UseMemoDemo";
+import CustomLayout from "./components/design-pattern/CustomLayout";
+import CustomLayoutDemo from "./components/design-pattern/CustomLayoutDemo";
+import ComponentWithLogger from "./components/design-pattern/hoc/ComponentWithLogger";
+import FetchDemoWithPattern from "./components/hook/FetchDemoWithPattern";
+import HocDemo from "./components/design-pattern/hoc/HocDemo";
 
 export default function Home() {
     let profile1 = {
@@ -194,7 +199,11 @@ export default function Home() {
            {/* <Table/>*/}
             {/*<PortalDemo/>*/}
            {/* <CallBackProblem/>*/}
-            <UseMemoDemo/>
+            {/*<UseMemoDemo/>*/}
+           {/* <CustomLayoutDemo/>*/}
+            {/*<ComponentWithLogger/>*/}
+           {/* <FetchDemoWithPattern/>*/}
+            <HocDemo/>
         </main>
 
     </div>

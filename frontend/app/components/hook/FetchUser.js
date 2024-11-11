@@ -1,6 +1,6 @@
 import useFetch from "./useFetch";
 
-export default function CustomHookDemo() {
+export default function FetchUser() {
     const {data,loading,error} = useFetch('https://jsonplaceholder.typicode.com/users');
 
     console.log('Data ',data);
