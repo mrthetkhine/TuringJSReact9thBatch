@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.0",
+    "bootstrap": "^5.3.3",
     "next": "latest",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.5",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0"
   },
