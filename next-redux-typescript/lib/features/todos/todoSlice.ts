@@ -9,7 +9,8 @@ export interface Todo
     completed:boolean
 }
 interface TodoState {
-  todos:Todo[]
+  todos:Todo[],
+  status:'loading'|'completed'
 }
 const dummyTodo:Todo[] = [
     {
@@ -24,24 +25,56 @@ const dummyTodo:Todo[] = [
     }
 ]
 const initialState:TodoState = {
-    todos:dummyTodo
+    todos:dummyTodo,
+    status:'loading'
 }
 export const todoSlice = createAppSlice({
     name: "todo",
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: (create) => ({
+        loading: create.reducer((state) => {
+            state.status ='loading';
+        }),
+        completed: create.reducer((state) => {
+            state.status ='completed';
+        }),
         addTodo: create.reducer((state,action:PayloadAction<Todo>) => {
             state.todos.push(action.payload);
         }),
         deleteTodo: create.reducer((state,action:PayloadAction<Todo>) => {
             state.todos = state.todos.filter(todo=>todo.id != action.payload.id)
         }),
-
+        updateTodo: create.reducer((state,action:PayloadAction<Todo>) => {
+            state.todos = state.todos.map(todo=>todo.id == action.payload.id ?action.payload:todo);
+        }),
+        loadAllTodoAsync: create.asyncThunk(
+            async (undefined, {dispatch,getState}) => {
+                console.log('Thunk Api ',getState().counter);
+                dispatch(loading());
+                const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+                const json= await response.json();
+                dispatch(completed());
+                return json;
+            },
+            {
+                pending: (state) => {
+                    //state.status = "loading";
+                },
+                fulfilled: (state, action) => {
+                    //state.status = "idle";
+                    state.todos= action.payload;
+                },
+                rejected: (state) => {
+                    //state.status = "failed";
+                },
+            },
+        ),
     }),
     selectors: {
-        selectTodo: (todo) => todo.todos,
+        selectTodo: (state) => state.todos,
+        selectCompletedTodoCount:(state)=>state.todos.filter(todo=>todo.completed).length
     },
 });
-export const {addTodo,deleteTodo} = todoSlice.actions;
-export const {selectTodo} = todoSlice.selectors;
+export const {addTodo,deleteTodo,updateTodo,loadAllTodoAsync,loading,completed} = todoSlice.actions;
+export const {selectTodo,selectCompletedTodoCount} = todoSlice.selectors;
