@@ -9,10 +9,14 @@ export default function TodoList()
 {
     const dispatch = useAppDispatch();
     const todos = useAppSelector(selectTodo);
-    const completedTodoCount = useAppSelector(selectCompletedTodoCount)
+    const completedTodoCount = useAppSelector(selectCompletedTodoCount);
 
     useEffect(()=>{
-        dispatch(loadAllTodoAsync());
+        dispatch(loadAllTodoAsync())
+            .unwrap()
+            .then((data)=>{
+                console.log('Loading completed ',data);
+                });
     },[]);
     return (<div>
         <h1>Completed count {completedTodoCount} </h1>

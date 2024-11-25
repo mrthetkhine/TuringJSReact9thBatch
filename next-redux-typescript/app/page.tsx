@@ -8,6 +8,7 @@ import OldComponent from "@/app/components/OldComponent";
 import CounterWithReducer from "@/app/components/reducer/CounterWithReducer";
 import ChildrenDemo from "@/app/components/ChildrenDemo";
 import TodoWithReducer from "@/app/components/todos/TodoWithReducer";
+import TodoProblem from '@/app/components/fetch/TodoProblem';
 export default function IndexPage() {
   const profile ={
     name:"Some Name",
@@ -23,7 +24,8 @@ export default function IndexPage() {
    {/* <ChildrenDemo>
         <h1>This is child</h1>
     </ChildrenDemo>*/}
-    <TodoWithReducer/>
+   {/* <TodoWithReducer/>*/}
+    <TodoProblem/>
   </div>);
 }
 

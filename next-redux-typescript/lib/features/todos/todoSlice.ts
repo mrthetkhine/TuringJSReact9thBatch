@@ -10,7 +10,7 @@ export interface Todo
 }
 interface TodoState {
   todos:Todo[],
-  status:'loading'|'completed'
+  status:'loading'|'completed'|'failed'
 }
 const dummyTodo:Todo[] = [
     {
@@ -49,13 +49,21 @@ export const todoSlice = createAppSlice({
             state.todos = state.todos.map(todo=>todo.id == action.payload.id ?action.payload:todo);
         }),
         loadAllTodoAsync: create.asyncThunk(
-            async (undefined, {dispatch,getState}) => {
+            async (undefined, {dispatch,getState,rejectWithValue,fulfillWithValue}) => {
                 console.log('Thunk Api ',getState().counter);
                 dispatch(loading());
-                const response = await fetch('https://jsonplaceholder.typicode.com/todos');
-                const json= await response.json();
-                dispatch(completed());
-                return json;
+                try
+                {
+                    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+                    const json = await response.json();
+                    dispatch(completed());
+                    return json;
+                }
+                catch(err)
+                {
+                    return rejectWithValue('Error fetching data');
+                }
+
             },
             {
                 pending: (state) => {
@@ -66,7 +74,8 @@ export const todoSlice = createAppSlice({
                     state.todos= action.payload;
                 },
                 rejected: (state) => {
-                    //state.status = "failed";
+                    console.log('Rejected');
+                    state.status = "failed";
                 },
             },
         ),
