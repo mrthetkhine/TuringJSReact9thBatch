@@ -8,8 +8,10 @@ import OldComponent from "@/app/components/OldComponent";
 import CounterWithReducer from "@/app/components/reducer/CounterWithReducer";
 import ChildrenDemo from "@/app/components/ChildrenDemo";
 import TodoWithReducer from "@/app/components/todos/TodoWithReducer";
-import TodoProblem from '@/app/components/fetch/TodoProblem';
+import TodoProblem from '@/app/components/query/TodoProblem';
+
 export default function IndexPage() {
+
   const profile ={
     name:"Some Name",
     image:"https://randomuser.me/api/portraits/women/8.jpg"

@@ -1,18 +1,20 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next  -p 8080",
     "build": "next build",
-    "start": "next start"
+    "start": "next start  -p 8080"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.0",
     "bootstrap": "^5.3.3",
+    "formik": "^2.4.6",
     "next": "latest",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.5",
+    "react-bootstrap": "^2.10.6",
     "react-dom": "^18.2.0",
-    "react-redux": "^9.1.0"
+    "react-redux": "^9.1.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "20.2.5",

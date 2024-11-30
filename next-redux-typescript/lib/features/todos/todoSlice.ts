@@ -50,7 +50,7 @@ export const todoSlice = createAppSlice({
         }),
         loadAllTodoAsync: create.asyncThunk(
             async (undefined, {dispatch,getState,rejectWithValue,fulfillWithValue}) => {
-                console.log('Thunk Api ',getState().counter);
+                //console.log('Thunk Api ',getState().counter);
                 dispatch(loading());
                 try
                 {
