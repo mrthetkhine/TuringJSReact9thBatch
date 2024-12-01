@@ -77,8 +77,14 @@ async function updateTodo(req,res,next){
     }
 
 }
+function delay(ms)
+{
+    let start = new Date();
+    while ( (new Date()-start) < ms) ;
+}
 async function deleteTodoById(req,res,next)
 {
+    delay(3000);
     let id = req.params.id;
     try
     {

@@ -9,6 +9,7 @@ import CounterWithReducer from "@/app/components/reducer/CounterWithReducer";
 import ChildrenDemo from "@/app/components/ChildrenDemo";
 import TodoWithReducer from "@/app/components/todos/TodoWithReducer";
 import TodoProblem from '@/app/components/query/TodoProblem';
+import TodoCount from '@/app/components/query/TodoCount';
 
 export default function IndexPage() {
 
@@ -27,6 +28,7 @@ export default function IndexPage() {
         <h1>This is child</h1>
     </ChildrenDemo>*/}
    {/* <TodoWithReducer/>*/}
+    <TodoCount/>
     <TodoProblem/>
   </div>);
 }

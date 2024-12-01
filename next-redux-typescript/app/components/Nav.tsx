@@ -16,6 +16,12 @@ export const Nav = () => {
       >
         Home
       </Link>
+    <Link
+        className={`${styles.link} ${pathname === "/todos" ? styles.active : ""}`}
+        href="/"
+    >
+        Todo details
+    </Link>
       <Link
         className={`${styles.link} ${
           pathname === "/verify" ? styles.active : ""
