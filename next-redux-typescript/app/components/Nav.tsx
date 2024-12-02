@@ -9,35 +9,58 @@ export const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className={styles.nav}>
-      <Link
-        className={`${styles.link} ${pathname === "/" ? styles.active : ""}`}
-        href="/"
-      >
-        Home
-      </Link>
-    <Link
-        className={`${styles.link} ${pathname === "/todos" ? styles.active : ""}`}
-        href="/"
-    >
-        Todo details
-    </Link>
-      <Link
-        className={`${styles.link} ${
-          pathname === "/verify" ? styles.active : ""
-        }`}
-        href="/verify"
-      >
-        Verify
-      </Link>
-      <Link
-        className={`${styles.link} ${
-          pathname === "/quotes" ? styles.active : ""
-        }`}
-        href="/quotes"
-      >
-        Quotes
-      </Link>
-    </nav>
-  );
+
+      <nav className={"navbar navbar-expand-lg navbar-dark bg-primary"}>
+          <a className="navbar-brand" href="#">
+              Navbar
+          </a>
+          <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+          >
+              <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                  <Link
+                      className={`nav-item nav-link`}
+                      href="/"
+                  >
+                      Home
+                  </Link>
+                  <Link
+                      className={`nav-item nav-link`}
+                      href="/todos"
+                  >
+                      Todo
+                  </Link>
+                  <Link
+                      className={`nav-item nav-link`}
+                      href="/verify"
+                  >
+                      Verify
+                  </Link>
+                  <Link
+                      className={`nav-item nav-link`}
+                      href="/quotes"
+                  >
+                      Quotes
+                  </Link>
+                  <Link
+                      className={`nav-item nav-link`}
+                      href="/login"
+                  >
+                      Login
+                  </Link>
+
+              </div>
+          </div>
+
+      </nav>
+    );
 };

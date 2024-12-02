@@ -46,6 +46,7 @@ async function getTodoById(req,res,next){
     }
 }
 async function saveTodo(req,res,next){
+    //delay(3000);
     console.log("Post todo ",req.body);
     try
     {
@@ -61,6 +62,7 @@ async function saveTodo(req,res,next){
 
 }
 async function updateTodo(req,res,next){
+    delay(3000);
     console.log('update Todo id ',req.params.id);
     try
     {

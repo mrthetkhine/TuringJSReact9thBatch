@@ -1,8 +1,12 @@
 "use client"
 
+import React from "react";
+import TodoProblem from "../components/query/TodoProblem";
+
 export default function TodosPage()
 {
     return (<div>
-        Todo details page
+        Todo  page
+        <TodoProblem/>
     </div>);
 }

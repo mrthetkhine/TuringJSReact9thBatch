@@ -32,7 +32,24 @@ export const todosApiSlice = createApi({
                 method: 'POST',
                 body: todo,
             }),
-            invalidatesTags: [{ type: 'Todos'}],
+            //Pessimistic update
+            async onQueryStarted(todo:TodoModel , { dispatch, queryFulfilled }) {
+                console.log('todo ',todo);
+                let patchResult ;
+                try {
+                    const {data:savedTodo} = await queryFulfilled;
+                    patchResult = dispatch(
+                        todosApiSlice.util.updateQueryData('getAllTodos', undefined, (draft) => {
+                            draft = draft.push(savedTodo);
+                            return draft;
+                        }),
+                    );
+                    console.log('Saved todo ',savedTodo);
+                } catch {
+
+                }
+            }
+          /*  invalidatesTags: [{ type: 'Todos'}],*/
         }),
        /* deleteTodo:build.mutation<TodoModel,string>({
             query: (todoId:string) => ({
@@ -49,6 +66,23 @@ export const todosApiSlice = createApi({
                 method: 'DELETE',
 
             }),
+            async onQueryStarted(id:string , { dispatch, queryFulfilled }) {
+                console.log('Id ',id);
+                const patchResult = dispatch(
+                    todosApiSlice.util.updateQueryData('getAllTodos', undefined, (draft) => {
+                        //console.log('Draft ',draft);
+                        draft = draft.filter(todo=>todo._id != id);
+                        //console.log('Draft ',draft);
+                        return draft;
+                    }),
+                );
+                try {
+                    const {data:deletedTodo} = await queryFulfilled
+                    console.log('Deleted todo ',deletedTodo);
+                } catch {
+                    patchResult.undo();
+                }
+            }
             
             //invalidatesTags: [{ type: 'Todos'}],
         }),
@@ -58,7 +92,24 @@ export const todosApiSlice = createApi({
                 method: 'PUT',
                 body:todo,
             }),
-            invalidatesTags: [{ type: 'Todos'}],
+            async onQueryStarted(todo:TodoModel , { dispatch, queryFulfilled }) {
+                console.log('Todo ',todo);
+                const patchResult = dispatch(
+                    todosApiSlice.util.updateQueryData('getAllTodos', undefined, (draft) => {
+                        //console.log('Draft ',draft);
+                        draft = draft.map(item=>item._id == todo._id?todo:item);
+                        //console.log('Draft ',draft);
+                        return draft;
+                    }),
+                );
+                try {
+                    const {data:updateTodo} = await queryFulfilled
+                    console.log('updated todo ',updateTodo);
+                } catch {
+                    patchResult.undo();
+                }
+            }
+            //invalidatesTags: [{ type: 'Todos'}],
         }),
     }),
 });

@@ -22,7 +22,7 @@ export default function RootLayout({ children }: Props) {
 
             <main className={styles.main}>{children}</main>
 
-
+            
           </section>
         </body>
       </html>

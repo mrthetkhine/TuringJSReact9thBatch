@@ -29,7 +29,7 @@ export default function IndexPage() {
     </ChildrenDemo>*/}
    {/* <TodoWithReducer/>*/}
     <TodoCount/>
-    <TodoProblem/>
+    
   </div>);
 }
 
