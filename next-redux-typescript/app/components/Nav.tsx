@@ -57,7 +57,12 @@ export const Nav = () => {
                   >
                       Login
                   </Link>
-
+                  <Link
+                      className={`nav-item nav-link`}
+                      href="/dashboard/setting"
+                  >
+                      Dashboard setting
+                  </Link>
               </div>
           </div>
 

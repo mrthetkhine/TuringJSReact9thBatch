@@ -26,6 +26,7 @@ let todos = [
     },
 ]
 async function getAllTodos(req,res,next){
+    delay(3000);
     console.log('Api todos routes');
     let todos = await todoService.getAllTodos();
     res.json(todos);
