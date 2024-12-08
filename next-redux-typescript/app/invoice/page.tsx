@@ -1,34 +1,43 @@
+'use client';
+import { useFormState } from "react-dom";
+import createUser from "@/app/actions/createUser";
 
+const initialState = {
+    message: '',
+}
 export default function Page()
 {
-    console.log('Invoice page');
-    async function createInvoice(formData: FormData) {
-        'use server'
-
-        const rawFormData = {
-            customerId: formData.get('customerId'),
-            amount: formData.get('amount'),
-            status: formData.get('status'),
-        }
-        console.log('Form data ',rawFormData);
-
-        // mutate data
-        // revalidate cache
-    }
+    const [state, formAction] = useFormState(createUser, initialState)
+    console.log('Invoice page ',state);
+    
     return (<div>
-        Invoice page
-        <form action={createInvoice}>
+       
+        {state?.success && state?.success?.message}
+        <form action={formAction}>
             <div className={"form-group"}>
-                <label>Customer Id</label>
-                <input className={"form-control"} name={"customerId"}/>
+                <label>Username</label>
+                <input className={"form-control"} name={"username"}/>
+                {state?.errors?.username &&  <div className={"alert alert-danger"}>
+                    {state.errors.username}
+                </div>
+                }
+
             </div>
             <div className={"form-group"}>
-                <label>Amount</label>
-                <input className={"form-control"} name={"amount"}/>
+                <label>Email</label>
+                <input className={"form-control"}  name={"email"}/>
+                {state?.errors?.email &&  <div className={"alert alert-danger"}>
+                    {state.errors.email}
+                    </div>
+                }
             </div>
             <div className={"form-group"}>
                 <label>Status</label>
                 <input className={"form-control"} name={"status"}/>
+                {state?.errors?.status &&  <div className={"alert alert-danger"}>
+                    {state.errors.status}
+                </div>
+                }
             </div>
             <div className={"form-group"}>
                 <button type={"submit"} className={"btn btn-primary"}>Submit</button>

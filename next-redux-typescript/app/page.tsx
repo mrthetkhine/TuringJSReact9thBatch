@@ -18,7 +18,7 @@ export default function IndexPage() {
     image:"https://randomuser.me/api/portraits/women/8.jpg"
   }
   return (<div>
-    {/*<Counter />*/}
+    <Counter />
     {/*<Profile profile={profile}/>*/}
     {/*<CallbackDemo/>*/}
     {/*<ContextDemo/>*/}

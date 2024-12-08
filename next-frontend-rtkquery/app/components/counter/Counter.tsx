@@ -25,9 +25,6 @@ export const Counter = () => {
 
   return (
     <div>
-      <div className={styles.container}>
-        Here is container
-      </div>
       <div className={styles.row}>
         <button
           className={styles.button}

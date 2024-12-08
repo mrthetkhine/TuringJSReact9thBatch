@@ -5,7 +5,7 @@ export default function TodoCount()
     const { data, isError, isLoading, isSuccess,refetch } = useGetAllTodosQuery(undefined);
     if(isSuccess)
     {
-        return <div>
+        return <div className={"container"}>
             Todo count {data?.length}
         </div>
     }
