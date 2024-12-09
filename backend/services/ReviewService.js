@@ -5,10 +5,10 @@ const getAllReviews = async () => {
     return Reviews.find();
 }
 const getReviewById = async(reviewId)=>{
-    return Reviews.findById(reviewId).populate("movie");
+    return Reviews.findById(reviewId);//.populate("movie");
 }
 const getReviewByMovieId = async(movieId)=>{
-    return Reviews.find({movie:movieId}).populate("movie");
+    return Reviews.find({movie:movieId});//.populate("movie");
 }
 const saveReview = async(review)=>{
     const newReview = new Reviews({
@@ -26,7 +26,7 @@ const updateReview = async(reviewId,review)=>{
     review.movie = new mongoose.Types.ObjectId(review.movie);
     //console.log('Review Id ',reviewId, ' Review ',review);
     const updatedReview = await Reviews.findByIdAndUpdate(reviewId, review,{new: true});
-    return updatedReview.populate("movie");
+    return updatedReview;//.populate("movie");
 }
 const deleteReviewById = async(id)=>{
     let review = await Reviews.findById(id);

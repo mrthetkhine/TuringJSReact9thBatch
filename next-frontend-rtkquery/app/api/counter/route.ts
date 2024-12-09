@@ -5,7 +5,7 @@ interface Context {
   params: undefined;
 }
 
-export async function POST(request: NextRequest, context: Context) {
+export async function POST(request: NextRequest) {
   const body: { amount: number } = await request.json();
   const { amount = 1 } = body;
 
