@@ -2,10 +2,15 @@
 
 import Movie from "@/types/movie";
 import MovieItem from "@/app/movies/MovieItem";
+import {useState} from "react";
+import {Button, Modal} from "react-bootstrap";
+import MovieFormDialog from "@/app/movies/MovieFormDialog";
+import {useGetAllMoviesQuery} from "@/lib/features/movies/movieApiSlice";
+import Loading from "@/app/loading";
 
 
 const movies:Movie[]=[
-    {
+   /* {
         "_id": "6756efc1e11e003172007abd",
         "title": "Titnaic",
         "director": {
@@ -26,20 +31,34 @@ const movies:Movie[]=[
         },
         "year": 2010,
 
-    }
+    }*/
 ]
 export default function MoviesPage()
 {
+    const { data, isError, isLoading, isSuccess,refetch } = useGetAllMoviesQuery(undefined,{
+
+    });
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const btnNewHandler = ()=>{
       console.log('New Movie');
+
     };
 
     return (<div>
 
-        <button type={"button"} className={"btn btn-primary"} onClick={btnNewHandler}>New</button>
+        <button type={"button"} className={"btn btn-primary"} onClick={handleShow}>New</button>
+        <MovieFormDialog show={show} handleClose={handleClose}/>
+
         <div>
             {
-                movies.map(movie=><MovieItem key={movie._id} movie={movie}/>)
+                isLoading && <Loading/>
+            }
+            {
+                isSuccess && data.map(movie=><MovieItem key={movie._id} movie={movie}/>)
             }
         </div>
 

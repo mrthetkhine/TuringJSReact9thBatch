@@ -10,9 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -40,6 +40,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/movies" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints.JavaScript" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -57,7 +58,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733749393569</updated>
-      <workItem from="1733749396638" duration="5593000" />
+      <workItem from="1733749396638" duration="5696000" />
+      <workItem from="1734168596580" duration="6598000" />
     </task>
     <servers />
   </component>
