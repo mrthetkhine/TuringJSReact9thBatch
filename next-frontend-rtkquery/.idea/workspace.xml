@@ -10,8 +10,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/movies" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/components/auth" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="inlay.hints.JavaScript" />
@@ -46,8 +46,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/movies" />
+      <recent name="$PROJECT_DIR$/app/components/auth" />
       <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/login" />
+      <recent name="$PROJECT_DIR$/app/movies" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -59,7 +61,10 @@
       <option name="presentableId" value="Default" />
       <updated>1733749393569</updated>
       <workItem from="1733749396638" duration="5696000" />
-      <workItem from="1734168596580" duration="6598000" />
+      <workItem from="1734168596580" duration="6712000" />
+      <workItem from="1734187933800" duration="13000" />
+      <workItem from="1734255064383" duration="6029000" />
+      <workItem from="1734353778870" duration="6150000" />
     </task>
     <servers />
   </component>

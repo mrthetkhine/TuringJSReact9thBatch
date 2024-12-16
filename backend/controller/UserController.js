@@ -22,6 +22,7 @@ const registerUser = async function( req,res,next)
 }
 const login = async function(req,res,next)
 {
+    console.log('Login body ',req.body);
     let userName = req.body['username'];
     let password = req.body['password'];
     try

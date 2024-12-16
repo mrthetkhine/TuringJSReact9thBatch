@@ -4,7 +4,8 @@ import { useFormik,Form,FieldArray,ErrorMessage,Field,Formik } from 'formik';
 import * as Yup from 'yup';
 import './MovieFormDialog.css';
 import Movie from "@/types/movie";
-import {useSaveMovieMutation} from "@/lib/features/movies/movieApiSlice";
+import {useSaveMovieMutation, useUpdateMovieMutation} from "@/lib/features/movies/movieApiSlice";
+import Director from "@/types/director";
 const schema=Yup.object({
     title: Yup.string()
         .max(50, 'Must be 50 characters or less')
@@ -32,30 +33,85 @@ const initialValues={
         }
     ]*/
 }
-const MovieForm = ({handleClose}:{
-    handleClose:()=>void,
-}) => {
-    const [saveMovie,result] = useSaveMovieMutation();
-    const onSubmit = (values:any)=>{
-        //console.log(JSON.stringify(values, null, 2));
-        const newMovie:Movie ={
+const MovieForm = ({
+                       handleClose,
+                        movieToEdit
+
+                }:{
+                handleClose:()=>void,
+                movieToEdit?:Movie,
+                    }) => {
+    console.log('Title ',movieToEdit?.title);
+    const initialValues={
+        title: movieToEdit?.title,
+        year: movieToEdit?.year,
+        director: movieToEdit?.director?.name,
+
+        /* actors:[
+             {
+                 firstName:'',
+                 lastName:'',
+             }
+         ]*/
+    }
+    const [saveMovieApi,result] = useSaveMovieMutation();
+    const [updateMovieApi,updateResult] = useUpdateMovieMutation();
+    function saveNewMovie(values: any) {
+        const newMovie: Movie = {
             ...values,
-            director:{
-                name:values.director
+            director: {
+                name: values.director
             }
 
         }
-        console.log('New Movie ',newMovie);
-        saveMovie(newMovie)
+        console.log('New Movie ', newMovie);
+        saveMovieApi(newMovie)
             .unwrap()
-            .then(data=> {
+            .then(data => {
                 console.log('Success');
                 Swal.fire("Movie successfully saved");
                 handleClose();
-            }, error=>{
+            }, error => {
                 console.log('Error');
                 handleClose();
             });
+    }
+    function  updateMovie(values:any)
+    {
+        let movieToUpdate:Movie = {
+            ...movieToEdit,
+            title:values.title,
+            year:values.year,
+            director: {
+                ...movieToEdit?.director?? {} as Director,
+                name: values.director
+            }
+        }
+        console.log('Director ',movieToUpdate.director);
+        //movieToUpdate.director.name = values.director;
+        updateMovieApi(movieToUpdate)
+            .then(data => {
+            console.log('Success');
+            Swal.fire("Movie successfully updated");
+            handleClose();
+        }, error => {
+            console.log('Error');
+            handleClose();
+        });
+
+
+    }
+
+    const onSubmit = (values:any)=>{
+        //console.log(JSON.stringify(values, null, 2));
+        if(movieToEdit){
+            updateMovie(values);
+        }
+        else
+        {
+            saveNewMovie(values);
+        }
+
     }
     return (<Formik
             initialValues={initialValues}
@@ -179,7 +235,9 @@ const MovieForm = ({handleClose}:{
                         </div>
                     )}
                 </FieldArray>*/}
-                <button type="submit" className={"btn btn-primary"}>Save</button>
+                <button type="submit" className={"btn btn-primary"}>
+                    {movieToEdit?'Update':'Save'}
+                </button>
                 &nbsp;
                 <Button variant="primary" onClick={handleClose}>
                     Cancel
@@ -190,18 +248,23 @@ const MovieForm = ({handleClose}:{
 
 
 };
-export default function MovieFormDialog({show,handleClose}:{
+export default function MovieFormDialog({show,handleClose,movieToEdit}:{
     show:boolean,
     handleClose:()=>void,
+    movieToEdit?:Movie
 })
 {
+
     return(<Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-            <Modal.Title>New Movie</Modal.Title>
+            <Modal.Title>{movieToEdit?'Edit Movie':'New Movie'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
 
-            <MovieForm handleClose={handleClose}/>
+            <MovieForm
+                handleClose={handleClose}
+                movieToEdit={movieToEdit}
+            />
         </Modal.Body>
         {/*<Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

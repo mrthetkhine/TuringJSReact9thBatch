@@ -7,6 +7,7 @@ import {Button, Modal} from "react-bootstrap";
 import MovieFormDialog from "@/app/movies/MovieFormDialog";
 import {useGetAllMoviesQuery} from "@/lib/features/movies/movieApiSlice";
 import Loading from "@/app/loading";
+import IsAuth from "@/app/components/auth/IsAuth";
 
 
 const movies:Movie[]=[
@@ -33,7 +34,7 @@ const movies:Movie[]=[
 
     }*/
 ]
-export default function MoviesPage()
+function MoviesPage()
 {
     const { data, isError, isLoading, isSuccess,refetch } = useGetAllMoviesQuery(undefined,{
 
@@ -64,3 +65,4 @@ export default function MoviesPage()
 
     </div>);
 }
+export default IsAuth(MoviesPage);

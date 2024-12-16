@@ -11,7 +11,9 @@ export default function MovieUI({movie}:{movie:Movie}) {
         <div className={styles.info}>
             <h3>Title {movie.title}</h3>
             <div>Year {movie.year}</div>
-            <DirectorUI director={movie.director}/>
+            {
+                movie.director && <DirectorUI director={movie.director}/>
+            }
         </div>
     </>;
 }
