@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f9d6c1-652c-4761-9d22-56324162de73" name="Default Changelist" comment="" />
+    <list default="true" id="60f9d6c1-652c-4761-9d22-56324162de73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/actions/loginAction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/axiosInstance.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/Nav.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/home/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/login/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/todos/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +79,9 @@
       <workItem from="1734168596580" duration="6712000" />
       <workItem from="1734187933800" duration="13000" />
       <workItem from="1734255064383" duration="6029000" />
-      <workItem from="1734353778870" duration="6150000" />
+      <workItem from="1734353778870" duration="6281000" />
+      <workItem from="1734761984977" duration="1286000" />
+      <workItem from="1734774170101" duration="2942000" />
     </task>
     <servers />
   </component>
