@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60f9d6c1-652c-4761-9d22-56324162de73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/actions/loginAction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/axiosInstance.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/Nav.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/home/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/login/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/todos/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/actions/authAction.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/DirectorUI.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieUI.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieUI.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/logout/logout.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/logout/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/ssr/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/types/director.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/types/movie.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/types/review.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/actions/loginAction.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +87,7 @@
       <workItem from="1734353778870" duration="6281000" />
       <workItem from="1734761984977" duration="1286000" />
       <workItem from="1734774170101" duration="2942000" />
+      <workItem from="1734859905355" duration="1362000" />
     </task>
     <servers />
   </component>

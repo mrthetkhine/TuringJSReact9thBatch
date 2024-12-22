@@ -1,10 +1,11 @@
 import axiosInstance from "../axiosInstance";
+import {Metadata} from "next";
+import MovieUI from "../components/MovieUI";
 
 export default async function page()
 {
     let movies = [];
     try {
-        //await new Promise((resolve,reject)=>setTimeout(resolve(),5000));
         const moviesResponse = await axiosInstance.get('/api/movies');
         movies = moviesResponse.data;
     }
@@ -14,11 +15,13 @@ export default async function page()
     }
 
     return (<div>
-        Movies
+
         {
-            movies && movies.map(movie=><div key={movie._id}>
-                {movie.title}
-            </div>)
+            movies && movies.map(movie=><MovieUI movie={movie} key={movie._id}/>)
         }
     </div>);
 }
+export const metadata: Metadata = {
+    title: "Movies",
+    description: "Movies page",
+};
