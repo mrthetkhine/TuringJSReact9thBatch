@@ -1,8 +1,10 @@
 import axiosInstance from "../axiosInstance";
 import {Metadata} from "next";
 import MovieUI from "../components/MovieUI";
+import Link from "next/link";
+import NewMovieForm from "../components/NewMovieForm";
 
-export default async function page()
+export default async function Page()
 {
     let movies = [];
     try {
@@ -15,7 +17,7 @@ export default async function page()
     }
 
     return (<div>
-
+        <NewMovieForm/>
         {
             movies && movies.map(movie=><MovieUI movie={movie} key={movie._id}/>)
         }

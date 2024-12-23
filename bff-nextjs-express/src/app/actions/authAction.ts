@@ -11,8 +11,8 @@ const loginSchema = z.object({
 })
 export async function loginAction(prevState:any, formData:FormData)
 {
-    await new Promise((resolve,reject)=> setTimeout(()=>resolve(),5000));
-    console.log('FormData ',formData);
+    //await new Promise((resolve,reject)=> setTimeout(()=>resolve(),5000));
+    //console.log('FormData ',formData);
 
     const loginFormData = Object.fromEntries(formData);
     const validatedLoginFormData = loginSchema.safeParse(loginFormData);
@@ -43,11 +43,22 @@ export async function loginAction(prevState:any, formData:FormData)
             if(loginData.token)
             {
                 const cookieStore = await cookies()
+                let redirectUrlFromCookie = await cookieStore.get('redirectUrl');
+                console.log('redirectUrlFromCookie ',redirectUrlFromCookie);
                 cookieStore.set('auth-token',loginData.token,{
                     httpOnly:true,
                 });
 
-                redirectUrl='/home';
+                if(redirectUrlFromCookie?.value)
+                {
+                    redirectUrl = redirectUrlFromCookie?.value;
+                    cookieStore.delete('redirectUrl');
+                }
+                else
+                {
+                    redirectUrl='/home';
+                }
+
 
             }
 
@@ -69,9 +80,7 @@ export  async  function logoutAction()
 {
     'use server';
     const cookieStore = await cookies()
-    cookieStore.delete( 'auth-token',{
-        httpOnly:true,
-    });
+    cookieStore.delete( 'auth-token');
 
     redirect('/login');
 }

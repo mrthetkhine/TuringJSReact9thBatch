@@ -1,15 +1,15 @@
-"use client";
+//"use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-import styles from "../styles/layout.module.css";
+import getAuthToken from "../utils/auth";
 
 
-export const Nav = () => {
-  const pathname = usePathname();
+export const Nav = async () => {
 
-  return (
+   const auth = await getAuthToken();
+
+    return (
       <nav className={"navbar navbar-expand-lg navbar-dark bg-primary"}>
 
           <button
@@ -26,6 +26,8 @@ export const Nav = () => {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
                   {
+                    auth?.value
+                    &&
                       <Link
                           className={`nav-item nav-link`}
                           href="/home"
@@ -34,7 +36,9 @@ export const Nav = () => {
                       </Link>
                   }
                   {
-                     <Link
+                     auth?.value
+                     &&
+                      <Link
                           className={`nav-item nav-link`}
                           href="/movies"
                       >
@@ -43,7 +47,8 @@ export const Nav = () => {
                   }
 
                   {
-                     <Link
+                      !auth?.value
+                      && <Link
                           className={`nav-item nav-link`}
                           href="/login"
                       >
@@ -51,7 +56,8 @@ export const Nav = () => {
                       </Link>
                   }
                   {
-                    <Link
+                      auth?.value
+                      && <Link
                           className={`nav-item nav-link`}
                           href="/logout"
                       >

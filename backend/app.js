@@ -14,6 +14,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var todosRouter = require('./routes/todos');
 var dummyRouter = require('./routes/dummy');
+var tokenVerifier = require('./routes/token_verifier');
 const movieRouter = require('./routes/movies');
 const reviewRouter = require('./routes/reviews');
 var app = express();
@@ -36,6 +37,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/verify',auth.verifyUserToken,tokenVerifier);
+
 app.use('/api/todos'/*auth.verifyUserToken*/,todosRouter);
 app.use('/api/movies',auth.verifyUserToken,movieRouter);
 app.use('/api/reviews'/*,auth.verifyUserToken*/,reviewRouter);

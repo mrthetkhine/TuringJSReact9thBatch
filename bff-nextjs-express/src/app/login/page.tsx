@@ -2,6 +2,7 @@
 import {loginAction} from '../actions/authAction';
 import {useFormState} from "react-dom";
 import {Metadata} from "next";
+import { useSearchParams } from 'next/navigation'
 const initialState = {
     success: "",
     errors: {
@@ -12,6 +13,10 @@ const initialState = {
 
 export default function Page()
 {
+    const searchParams = useSearchParams()
+    const search = searchParams.get('redirectUrl');
+
+    console.log('Redirect url ',search);
     const [state, formAction,isPending] = useFormState(loginAction, initialState);
     console.log('State ',state);
     return (<div>

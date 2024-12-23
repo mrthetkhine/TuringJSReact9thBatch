@@ -13,10 +13,12 @@
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
     "next": "15.1.2",
+    "next-client-cookies": "^2.0.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",
     "react-dom": "^19.0.0",
     "react-loader-spinner": "^6.1.6",
+    "sweetalert2": "^11.15.3",
     "yup": "^1.6.1",
     "zod": "^3.24.1"
   },
