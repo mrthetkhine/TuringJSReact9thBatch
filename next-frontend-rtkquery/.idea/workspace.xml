@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60f9d6c1-652c-4761-9d22-56324162de73" name="Default Changelist" comment="" />
+    <list default="true" id="60f9d6c1-652c-4761-9d22-56324162de73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieItem.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/auth/LoginForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/auth/LogoutForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/[id]/page.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/controller/MovieController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/controller/MovieController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/actions/movieAction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/actions/movieAction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieFormDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieFormDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieUI.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/MovieUI.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/logout/logout.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/components/auth/LogoutForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/logout/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/logout/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../bff-nextjs-express/src/app/movies/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +85,8 @@
       <workItem from="1734774170101" duration="2942000" />
       <workItem from="1734859905355" duration="1362000" />
       <workItem from="1734960874074" duration="1736000" />
+      <workItem from="1735378161614" duration="4000" />
+      <workItem from="1735382608904" duration="1612000" />
     </task>
     <servers />
   </component>

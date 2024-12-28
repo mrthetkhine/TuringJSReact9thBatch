@@ -57,6 +57,7 @@ const findMoviesByYear = async (req,res)=>{
 async function saveMovie(req, res) {
     try
     {
+        console.log('Save movie ',req.body);
         let movie = await movieService.saveMovie(req.body);
         res.status(201).json(movie);
     }

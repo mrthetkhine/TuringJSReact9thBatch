@@ -1,0 +1,7 @@
+.movie-container
+{
+    min-height: 100px;
+    /* border:1px solid lightgray;*/
+    text-align: center;
+    padding:10px;
+}

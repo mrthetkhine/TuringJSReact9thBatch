@@ -3,6 +3,7 @@ import {Metadata} from "next";
 import MovieUI from "../components/MovieUI";
 import Link from "next/link";
 import NewMovieForm from "../components/NewMovieForm";
+import MovieItem from "../components/MovieItem";
 
 export default async function Page()
 {
@@ -18,9 +19,12 @@ export default async function Page()
 
     return (<div>
         <NewMovieForm/>
+        <div>
         {
-            movies && movies.map(movie=><MovieUI movie={movie} key={movie._id}/>)
+
+            movies && movies.map(movie=><MovieItem movie={movie} key={movie._id}/>)
         }
+        </div>
     </div>);
 }
 export const metadata: Metadata = {
