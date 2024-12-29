@@ -1,4 +1,4 @@
-import Director from "../../../types/director";
+import Director from "../../../../types/director";
 
 export default function DirectorUI({director}:{director:Director})
 {

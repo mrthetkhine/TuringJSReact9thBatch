@@ -1,8 +1,8 @@
 'use client';
-import Movie from "../../../types/movie";
+import Movie from "../../../../types/movie";
 import {useRouter} from "next/navigation";
 import Swal from "sweetalert2";
-import {deleteMovieAction} from "../actions/movieAction";
+import {deleteMovieAction} from "../../actions/movieAction";
 import MovieUI from "./MovieUI";
 import styles from "./MovieItem.module.css";
 

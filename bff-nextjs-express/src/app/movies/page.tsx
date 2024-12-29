@@ -1,9 +1,9 @@
 import axiosInstance from "../axiosInstance";
 import {Metadata} from "next";
-import MovieUI from "../components/MovieUI";
+import MovieUI from "../components/movie/MovieUI";
 import Link from "next/link";
-import NewMovieForm from "../components/NewMovieForm";
-import MovieItem from "../components/MovieItem";
+import NewMovieForm from "../components/movie/NewMovieForm";
+import MovieItem from "../components/movie/MovieItem";
 
 export default async function Page()
 {

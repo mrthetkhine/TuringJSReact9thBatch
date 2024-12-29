@@ -4,9 +4,9 @@ import Swal from 'sweetalert2'
 import {useRouter} from "next/navigation";
 
 import styles from "./MovieUI.module.css";
-import Movie from "../../../types/movie";
+import Movie from "../../../../types/movie";
 import DirectorUI from "./DirectorUI";
-import {deleteMovieAction} from "../actions/movieAction";
+import {deleteMovieAction} from "../../actions/movieAction";
 
 export default function MovieUI({movie}:{movie:Movie}) {
 

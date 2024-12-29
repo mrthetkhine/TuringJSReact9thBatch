@@ -3,15 +3,16 @@ import Swal from 'sweetalert2'
 import { useFormik,Form,FieldArray,ErrorMessage,Field,Formik } from 'formik';
 import * as Yup from 'yup';
 import './MovieFormDialog.css';
-import Movie from "../../../types/movie";
+import Movie from "../../../../types/movie";
 import {useFormState, useFormStatus} from "react-dom";
-import {loginAction} from "../actions/authAction";
-import {saveMovieAction} from "../actions/movieAction";
-import {useEffect, useTransition} from "react";
+import {loginAction} from "../../actions/authAction";
+import { saveOrUpdateAction} from "../../actions/movieAction";
+import {ChangeEvent, useEffect, useState, useTransition} from "react";
 
 const initialState = {
     success: "",
     errors: {
+        _id:"",
         title: "",
         year: "",
         director:"",
@@ -27,7 +28,12 @@ const MovieForm = ({
                 handleClose:()=>void,
                 movieToEdit?:Movie,
                     }) => {
-    const [state, formAction,isPendingForm] = useFormState(saveMovieAction, initialState);
+    const [id,setId]  =useState(movieToEdit?._id??'');
+    const [title,setTitle] = useState(movieToEdit?.title??'');
+    const [year,setYear] = useState(movieToEdit?.year??'');
+    const [director,setDirector] = useState(movieToEdit?.director?.name??'');
+    const [state, saveOrUpdateMovie,isPendingForm] = useFormState(saveOrUpdateAction, initialState);
+
     console.log('State ',state);
     useEffect(()=>{
         console.log('Run effect ', state);
@@ -38,24 +44,41 @@ const MovieForm = ({
     })
 
     return (<div>
-        <form action={formAction}>
+        <form action={saveOrUpdateMovie}>
+            <div className={"from-group"}>
+
+                <input type={"hidden"} name={"_id"} className={"form-control"} value={id}/>
+
+            </div>
             <div className={"from-group"}>
                 <label>Title</label>
-                <input type={"text"} name={"title"} className={"form-control"}/>
+                <input type={"text"}
+                       name={"title"}
+                       className={"form-control"}
+                       value={title}
+                       onChange={(e:ChangeEvent<HTMLInputElement>)=>setTitle(e.target.value)}/>
                 {state?.errors?.title && (
                     <div className="alert alert-danger">{state.errors.title}</div>
                 )}
             </div>
             <div className={"from-group"}>
                 <label>Year</label>
-                <input type={"text"} name={"year"} className={"form-control"}/>
+                <input type={"text"}
+                       name={"year"}
+                       className={"form-control"}
+                       value={year}
+                       onChange={(e:ChangeEvent<HTMLInputElement>)=>setYear(e.target.value)}/>
                 {state?.errors?.year && (
                     <div className="alert alert-danger">{state.errors.year}</div>
                 )}
             </div>
             <div className={"from-group"}>
                 <label>Director</label>
-                <input type={"text"} name={"director"} className={"form-control"}/>
+                <input type={"text"}
+                       name={"director"}
+                       className={"form-control"}
+                       value={director}
+                       onChange={(e:ChangeEvent<HTMLInputElement>)=>setDirector(e.target.value)}/>
                 {state?.errors?.director && (
                     <div className="alert alert-danger">{state.errors.director}</div>
                 )}
@@ -93,13 +116,6 @@ export default function MovieFormDialog({show,handleClose,movieToEdit}:{
                 movieToEdit={movieToEdit}
             />
         </Modal.Body>
-        {/*<Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-                Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-                Save Changes
-            </Button>
-        </Modal.Footer>*/}
+
     </Modal>);
 }

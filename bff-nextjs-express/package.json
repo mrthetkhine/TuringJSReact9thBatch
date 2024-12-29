@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@smastrom/react-rating": "^1.5.0",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "formik": "^2.4.6",
